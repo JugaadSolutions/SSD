@@ -5,10 +5,10 @@ device=PIC18F8722
 [PATH_INFO]
 BuildDirPolicy=BuildDirIsProjectDir
 dir_src=
-dir_bin=
-dir_tmp=
+dir_bin=SSD_Lib/output
+dir_tmp=SSD_Lib/obj
 dir_sin=
-dir_inc=
+dir_inc=C:\Program Files\Microchip\mplabc18\v3.46\h;SSD_Lib/include
 dir_lib=C:\Program Files (x86)\Microchip\mplabc18\v3.46\lib
 dir_lkr=
 [CAT_FILTERS]
@@ -23,6 +23,18 @@ subfolder_inc=
 subfolder_obj=
 subfolder_lib=
 subfolder_lkr=
+[FILE_SUBFOLDERS]
+file_000=.
+file_001=.
+[GENERATED_FILES]
+file_000=no
+file_001=no
+[OTHER_FILES]
+file_000=no
+file_001=no
+[FILE_INFO]
+file_000=SSD_Lib\source\ssd.c
+file_001=SSD_Lib\include\ssd.h
 [SUITE_INFO]
 suite_guid={5B7D72DD-9861-47BD-9F60-2BE967BF8416}
 suite_state=build-library generate-relocatable-code
