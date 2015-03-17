@@ -62,7 +62,7 @@ void  SSD_Init( void )
 	ssd.blinkPeriod = 0;
 	ssd.dispBuffer = ssd.buffer[STATIC];
 #if defined (SSD_TEST)
-		SSD_Test( 0 , (MAX_DIGITS - 1) );
+		SSD_Test( 0 , MAX_DIGITS );
 #endif
 
 }
@@ -280,7 +280,54 @@ void SSD_Refresh(void)
 
 }
 
+/*------------------------------------------------------------------------------
+*  BOOL SSD_BlinkOn( UINT8 field_ID )
+*
+* Function to turn ON blinking feature
+* 
+* 
+* Input :    filed_ID   - ID of Field created by call to SSD_CreateField
+*  
+* return value: True On Success
+*                      False - On failure .
+* 
+*------------------------------------------------------------------------------*/
+BOOL SSD_BlinkOn( UINT8 field_ID ,UINT16 blinkPeriod)
+{
+	UINT8 result = FALSE;
+	ssd.blinkPeriod = blinkPeriod / DISPLAY_REFRESH_PERIOD;	//convert period in milliseconds to period in count
+	ssd.blinkCount = 0;										//reset counter
+	ssd.fields[field_ID].blink = BLINK;											//set blink mode
+	
+	result = TRUE;
+	return result;
+}	
 
+
+
+
+/*------------------------------------------------------------------------------
+*  BOOL  SSD_BlinkOff( UINT8 field_ID )
+*
+* Function to turn OFF blinking feature of the field 
+* 
+* 
+* Input :    filed_ID   - ID of Field created by call to SSD_CreateField
+
+* return value: True On Success
+*                      False - On failure .
+* 
+*------------------------------------------------------------------------------*/
+BOOL SSD_BlinkOff( UINT8 field_ID )
+{
+	UINT8 result = FALSE;
+	
+	ssd.dispBuffer = ssd.buffer[STATIC]; //set current display buffer to data buffer
+	ssd.fields[field_ID].blink = STATIC;							   //set static mode
+
+	result = TRUE;
+	return result;
+}
 
 /*
 *------------------------------------------------------------------------------
@@ -307,6 +354,7 @@ static void writeToSSDPort( UINT8 data )
 
 	DATA_PORT_A = ~data;
 
+	Delay10us(1);
 
 	shift <<= ssd.digitIndex;
 

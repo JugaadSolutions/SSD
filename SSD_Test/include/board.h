@@ -63,8 +63,8 @@
 
 
 //Seven segment digit
-#define	DIGIT_PORT_A               PORTA
-#define DIGIT_PORT_A_DIRECTION     TRISA
+#define	DIGIT_PORT_A               PORTE
+#define DIGIT_PORT_A_DIRECTION     TRISE
 
 #define DIGIT_PORT_B               PORTB
 #define DIGIT_PORT_B_DIRECTION     TRISB

@@ -23,7 +23,7 @@ typedef struct _Field
 
 	UINT8	 ID;				// To Identify the field
 	UINT8	 bufferIndex;		//Index of digit display buffer, corresponding to field data
-	UINT8	 length;			//Field Length
+	UINT8    digits;			// No. of digits in the field
 	BOOL 	 blink;				// Blink Flag
 	UINT8 	 dotIndex ;			//Values [0 - length -1, 0xFF]
 }Field;
@@ -32,11 +32,23 @@ typedef struct _Field
 typedef struct _SSD
 {
 	Field    fields[MAX_FIELDS];   		// contains field information
+	UINT8	 fieldCount;				// Stores field count[1 - MAX_FIELDS]
 	UINT8 	 buffer[2][MAX_DIGITS];		//stores the data going to be display
+	UINT8* 	 dispBuffer; // pointer to current display buffer
 	UINT8 	 digitIndex ;				//to point next data in buffer
-	UINT16	 blinkPeriod;	
+	UINT16	 blinkCount;				//counter to be used in blink mode
+	UINT16	 blinkPeriod;				//blink period represented in counts	
 }SSD;
 
+
+
+typedef enum
+{
+	STATIC = 0,
+	BLINK 
+}SSD_MODE;
+
+#define DISPLAY_REFRESH_PERIOD	2
 
 /*------------------------------------------------------------------------------
 Public Function declarations:
@@ -52,7 +64,7 @@ Public Function declarations:
 * return value: none.
 * 
 *------------------------------------------------------------------------------*/
-void  SSD_Init( void )
+void  SSD_Init( void );
 /*------------------------------------------------------------------------------
 * UINT8 SSD_CreateField(UINT8 digits )
 
@@ -88,7 +100,7 @@ BOOL SSD_UpdateField(UINT8 filed_ID, UINT8 *buffer);
 
 
 /*------------------------------------------------------------------------------
-* BOOL SSD_UpdateFieldpartial(UINT8 field_ID , UINT8 *buffer, UINT8 index , UINT8  digits);
+* BOOL SSD_UpdateFieldpartial(UINT8 field_ID , UINT8 *buffer, UINT8 index , UINT8  no_of_digit);
 * Function to update field content to  in display buffer.
 * 
 * 
@@ -101,8 +113,7 @@ BOOL SSD_UpdateField(UINT8 filed_ID, UINT8 *buffer);
 *                      False - On failure .
 * 
 *------------------------------------------------------------------------------*/
-BOOL SSD_UpdateFieldpartial(UINT8 field_ID , 
-UINT8 *buffer, UINT8 index , UINT8 digits);
+BOOL SSD_UpdateFieldpartial(UINT8 field_ID,UINT8 *buffer, UINT8 index , UINT8 no_of_digit);
 
 /*------------------------------------------------------------------------------
 * BOOL SSD_DotOn( UINT8 field_ID , UINT8 index)
@@ -131,12 +142,13 @@ BOOL SSD_DotOn( UINT8 field_ID , UINT8 index);
 * 
 * 
 * Input :    filed_ID   - ID of Field created by call to SSD_CreateField
+			 blinkPeroid -  the blinking time of that field
 *  
 * return value: True On Success
 *                      False - On failure .
 * 
 *------------------------------------------------------------------------------*/
-BOOL SSD_BlinkOn( UINT8 field_ID );
+BOOL SSD_BlinkOn( UINT8 field_ID,UINT16 blinkPeriod );
 
 
 /*------------------------------------------------------------------------------
@@ -189,6 +201,19 @@ void SSD_Refresh(void);
 * 
 *------------------------------------------------------------------------------*/
 void SSD_Test(UINT8 from, UINT8 digits );
+
+
+/*------------------------------------------------------------------------------
+*  void SSD_Clear(void )
+*
+* clear the SSD  buffer
+* 
+* Input : none 
+* return value: none.
+* 
+*------------------------------------------------------------------------------*/
+void SSD_Clear(void);
+
 
 
 #endif

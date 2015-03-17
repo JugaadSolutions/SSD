@@ -48,6 +48,8 @@ typedef enum
 	BLINK 
 }SSD_MODE;
 
+#define DISPLAY_REFRESH_PERIOD	2
+
 /*------------------------------------------------------------------------------
 Public Function declarations:
 *------------------------------------------------------------------------------*/
@@ -140,12 +142,13 @@ BOOL SSD_DotOn( UINT8 field_ID , UINT8 index);
 * 
 * 
 * Input :    filed_ID   - ID of Field created by call to SSD_CreateField
+			 blinkPeroid -  the blinking time of that field
 *  
 * return value: True On Success
 *                      False - On failure .
 * 
 *------------------------------------------------------------------------------*/
-BOOL SSD_BlinkOn( UINT8 field_ID );
+BOOL SSD_BlinkOn( UINT8 field_ID,UINT16 blinkPeriod );
 
 
 /*------------------------------------------------------------------------------

@@ -96,8 +96,8 @@ enum
 #define SSD_TEST
 #define COMMON_CATHODE
 
-#define MAX_DIGITS 26
-#define MAX_FIELDS 4
+#define MAX_DIGITS 8
+#define MAX_FIELDS 2
 
 /*----------------------------------------
 *	APP CONFIGURATION

@@ -1,5 +1,5 @@
 MPLINK 4.48, Linker
-Linker Map File - Created Tue Mar 17 13:11:48 2015
+Linker Map File - Created Tue Mar 17 17:57:42 2015
 
                                  Section Info
                   Section       Type    Address   Location Size(Bytes)
@@ -7,56 +7,61 @@ Linker Map File - Created Tue Mar 17 13:11:48 2015
                _entry_scn       code   0x000000    program   0x000006
            .code___init.o       code   0x000006    program   0x000002
               high_vector       code   0x000008    program   0x00001a
-                   .cinit    romdata   0x000022    program   0x00003e
-          .code_obj\ssd.o       code   0x000060    program   0x0006a0
-        .code_obj\timer.o       code   0x000700    program   0x000386
-        .code_obj\board.o       code   0x000a86    program   0x0001b6
-               _cinit_scn       code   0x000c3c    program   0x00009e
-         .code_obj\main.o       code   0x000cda    program   0x00005e
-         .code_fxd3232u.o       code   0x000d38    program   0x000048
-           .code_t3open.o       code   0x000d80    program   0x000042
-           .code_t1open.o       code   0x000dc2    program   0x000042
-          .code_t3write.o       code   0x000e04    program   0x000038
-          .code_t1write.o       code   0x000e3c    program   0x000038
-          .code_t0write.o       code   0x000e74    program   0x000038
-           .code_t0open.o       code   0x000eac    program   0x000038
-              D1KTCYXCODE       code   0x000ee4    program   0x000020
-                    .code       code   0x000f04    program   0x000020
-             _startup_scn       code   0x000f24    program   0x00001c
-    .code_obj\heartBeat.o       code   0x000f40    program   0x00001a
-               SSD_DATA_i    romdata   0x000f5a    program   0x000050
-        .romdata___init.o    romdata   0x000faa    program   0x000000
-      .romdata_fxd3232u.o    romdata   0x000faa    program   0x000000
-        .idata_t0open.o_i    romdata   0x000faa    program   0x000000
-        .romdata_t0open.o    romdata   0x000faa    program   0x000000
-     .romdata_obj\timer.o    romdata   0x000faa    program   0x000000
-        .idata_t1open.o_i    romdata   0x000faa    program   0x000000
-        .romdata_t1open.o    romdata   0x000faa    program   0x000000
-        .idata_t3open.o_i    romdata   0x000faa    program   0x000000
-        .romdata_t3open.o    romdata   0x000faa    program   0x000000
-       .idata_t0write.o_i    romdata   0x000faa    program   0x000000
-       .romdata_t0write.o    romdata   0x000faa    program   0x000000
-       .romdata_t3write.o    romdata   0x000faa    program   0x000000
-       .idata_t1write.o_i    romdata   0x000faa    program   0x000000
-       .romdata_t1write.o    romdata   0x000faa    program   0x000000
-       .idata_t3write.o_i    romdata   0x000faa    program   0x000000
-     .idata_obj\timer.o_i    romdata   0x000faa    program   0x00001c
-       .romdata_obj\ssd.o    romdata   0x000faa    program   0x000000
-         .romdata_c018i.o    romdata   0x000faa    program   0x000000
-     .romdata_obj\board.o    romdata   0x000faa    program   0x000000
- .romdata_obj\heartBeat.o    romdata   0x000faa    program   0x000000
-.romdata_obj\interruptvector.o    romdata   0x000faa    program   0x000000
-      .romdata_obj\main.o    romdata   0x000faa    program   0x000000
-       .idata_obj\ssd.o_i    romdata   0x000fc6    program   0x00000b
- .idata_obj\heartBeat.o_i    romdata   0x000fd1    program   0x000001
-.idata_obj\interruptvector.o_i    romdata   0x000fd1    program   0x000000
-      .idata_obj\main.o_i    romdata   0x000fd1    program   0x000000
-     .idata_obj\board.o_i    romdata   0x000fd2    program   0x000002
-         .idata_c018i.o_i    romdata   0x000fd4    program   0x000000
-            .code_c018i.o       code   0x000fd4    program   0x000000
-        .idata___init.o_i    romdata   0x000fd4    program   0x000000
-.code_obj\interruptvector.o       code   0x000fd4    program   0x000000
-      .idata_fxd3232u.o_i    romdata   0x000fd4    program   0x000000
+                   .cinit    romdata   0x000022    program   0x00004a
+          .code_obj\ssd.o       code   0x00006c    program   0x000754
+        .code_obj\timer.o       code   0x0007c0    program   0x000386
+        .code_obj\board.o       code   0x000b46    program   0x0001b6
+          .code_obj\app.o       code   0x000cfc    program   0x0000ae
+               _cinit_scn       code   0x000daa    program   0x00009e
+         .code_obj\main.o       code   0x000e48    program   0x00005e
+         .code_fxd3232u.o       code   0x000ea6    program   0x000048
+           .code_t3open.o       code   0x000eee    program   0x000042
+           .code_t1open.o       code   0x000f30    program   0x000042
+          .code_t3write.o       code   0x000f72    program   0x000038
+          .code_t1write.o       code   0x000faa    program   0x000038
+          .code_t0write.o       code   0x000fe2    program   0x000038
+           .code_t0open.o       code   0x00101a    program   0x000038
+              D1KTCYXCODE       code   0x001052    program   0x000020
+                    .code       code   0x001072    program   0x000020
+             _startup_scn       code   0x001092    program   0x00001c
+    .code_obj\heartBeat.o       code   0x0010ae    program   0x00001a
+              D10TCYXCODE       code   0x0010c8    program   0x000016
+               SSD_DATA_i    romdata   0x0010de    program   0x000022
+               APP_DATA_i    romdata   0x001100    program   0x000014
+       .romdata_obj\app.o    romdata   0x001114    program   0x000000
+        .romdata___init.o    romdata   0x001114    program   0x000000
+      .romdata_fxd3232u.o    romdata   0x001114    program   0x000000
+       .romdata_t3write.o    romdata   0x001114    program   0x000000
+        .idata_t0open.o_i    romdata   0x001114    program   0x000000
+        .romdata_t0open.o    romdata   0x001114    program   0x000000
+        .idata_t1open.o_i    romdata   0x001114    program   0x000000
+        .romdata_t1open.o    romdata   0x001114    program   0x000000
+        .idata_t3open.o_i    romdata   0x001114    program   0x000000
+        .romdata_t3open.o    romdata   0x001114    program   0x000000
+       .idata_t3write.o_i    romdata   0x001114    program   0x000000
+       .idata_t0write.o_i    romdata   0x001114    program   0x000000
+       .romdata_t0write.o    romdata   0x001114    program   0x000000
+       .idata_t1write.o_i    romdata   0x001114    program   0x000000
+       .romdata_t1write.o    romdata   0x001114    program   0x000000
+      .romdata_obj\main.o    romdata   0x001114    program   0x000000
+     .romdata_obj\timer.o    romdata   0x001114    program   0x000000
+     .idata_obj\timer.o_i    romdata   0x001114    program   0x00001c
+       .romdata_obj\ssd.o    romdata   0x001114    program   0x000000
+         .romdata_c018i.o    romdata   0x001114    program   0x000000
+.romdata_obj\interruptvector.o    romdata   0x001114    program   0x000000
+     .romdata_obj\board.o    romdata   0x001114    program   0x000000
+ .romdata_obj\heartBeat.o    romdata   0x001114    program   0x000000
+       .idata_obj\ssd.o_i    romdata   0x001130    program   0x00000b
+      .idata_obj\main.o_i    romdata   0x00113b    program   0x000000
+.idata_obj\interruptvector.o_i    romdata   0x00113b    program   0x000000
+ .idata_obj\heartBeat.o_i    romdata   0x00113b    program   0x000001
+     .idata_obj\board.o_i    romdata   0x00113c    program   0x000002
+        .idata___init.o_i    romdata   0x00113e    program   0x000000
+.code_obj\interruptvector.o       code   0x00113e    program   0x000000
+            .code_c018i.o       code   0x00113e    program   0x000000
+         .idata_c018i.o_i    romdata   0x00113e    program   0x000000
+      .idata_fxd3232u.o_i    romdata   0x00113e    program   0x000000
+       .idata_obj\app.o_i    romdata   0x00113e    program   0x000000
 .config_300001_obj\main.o    romdata   0x300001    program   0x000001
 .config_300002_obj\main.o    romdata   0x300002    program   0x000001
 .config_300003_obj\main.o    romdata   0x300003    program   0x000001
@@ -72,37 +77,40 @@ Linker Map File - Created Tue Mar 17 13:11:48 2015
                 MATH_DATA      udata   0x000000       data   0x000010
                  .tmpdata      udata   0x000010       data   0x000009
                 DELAYDAT1      udata   0x000019       data   0x000001
-                 SSD_DATA      idata   0x000060       data   0x000050
-       .idata_obj\timer.o      idata   0x0000b0       data   0x00001c
-         .idata_obj\ssd.o      idata   0x0000cc       data   0x00000b
-           .udata_c018i.o      udata   0x0000d7       data   0x00000a
-       .idata_obj\board.o      idata   0x0000e1       data   0x000002
-       .udata_obj\board.o      udata   0x0000e3       data   0x000001
-   .idata_obj\heartBeat.o      idata   0x0000e4       data   0x000001
-          .udata_t1open.o      udata   0x0000e5       data   0x000000
-          .idata_t1open.o      idata   0x0000e5       data   0x000000
-          .udata_t3open.o      udata   0x0000e5       data   0x000000
-          .idata_t3open.o      idata   0x0000e5       data   0x000000
-         .udata_t0write.o      udata   0x0000e5       data   0x000000
-         .idata_t0write.o      idata   0x0000e5       data   0x000000
-         .udata_t1write.o      udata   0x0000e5       data   0x000000
-         .idata_t1write.o      idata   0x0000e5       data   0x000000
-         .udata_t3write.o      udata   0x0000e5       data   0x000000
-         .idata_t3write.o      idata   0x0000e5       data   0x000000
-          .udata___init.o      udata   0x0000e5       data   0x000000
-          .idata___init.o      idata   0x0000e5       data   0x000000
-          .idata_t0open.o      idata   0x0000e5       data   0x000000
-          .udata_t0open.o      udata   0x0000e5       data   0x000000
-        .idata_fxd3232u.o      idata   0x0000e5       data   0x000000
-        .udata_fxd3232u.o      udata   0x0000e5       data   0x000000
-       .udata_obj\timer.o      udata   0x0000e5       data   0x000000
-         .udata_obj\ssd.o      udata   0x0000e5       data   0x000000
-        .idata_obj\main.o      idata   0x0000e5       data   0x000000
-        .udata_obj\main.o      udata   0x0000e5       data   0x000000
-.idata_obj\interruptvector.o      idata   0x0000e5       data   0x000000
-.udata_obj\interruptvector.o      udata   0x0000e5       data   0x000000
-   .udata_obj\heartBeat.o      udata   0x0000e5       data   0x000000
-           .idata_c018i.o      idata   0x0000e5       data   0x000000
+                 SSD_DATA      idata   0x000060       data   0x000022
+       .idata_obj\timer.o      idata   0x000082       data   0x00001c
+         .idata_obj\ssd.o      idata   0x00009e       data   0x00000b
+           .udata_c018i.o      udata   0x0000a9       data   0x00000a
+       .idata_obj\board.o      idata   0x0000b3       data   0x000002
+       .udata_obj\board.o      udata   0x0000b5       data   0x000001
+   .idata_obj\heartBeat.o      idata   0x0000b6       data   0x000001
+        .idata_fxd3232u.o      idata   0x0000b7       data   0x000000
+          .udata_t0open.o      udata   0x0000b7       data   0x000000
+          .idata_t0open.o      idata   0x0000b7       data   0x000000
+          .udata_t1open.o      udata   0x0000b7       data   0x000000
+          .idata_t1open.o      idata   0x0000b7       data   0x000000
+          .udata_t3open.o      udata   0x0000b7       data   0x000000
+          .idata_t3open.o      idata   0x0000b7       data   0x000000
+         .udata_t0write.o      udata   0x0000b7       data   0x000000
+         .idata_t0write.o      idata   0x0000b7       data   0x000000
+         .udata_t1write.o      udata   0x0000b7       data   0x000000
+         .idata_t1write.o      idata   0x0000b7       data   0x000000
+         .udata_t3write.o      udata   0x0000b7       data   0x000000
+         .idata_t3write.o      idata   0x0000b7       data   0x000000
+        .udata_fxd3232u.o      udata   0x0000b7       data   0x000000
+          .udata___init.o      udata   0x0000b7       data   0x000000
+          .idata___init.o      idata   0x0000b7       data   0x000000
+         .idata_obj\app.o      idata   0x0000b7       data   0x000000
+         .udata_obj\app.o      udata   0x0000b7       data   0x000000
+       .udata_obj\timer.o      udata   0x0000b7       data   0x000000
+         .udata_obj\ssd.o      udata   0x0000b7       data   0x000000
+        .idata_obj\main.o      idata   0x0000b7       data   0x000000
+        .udata_obj\main.o      udata   0x0000b7       data   0x000000
+.idata_obj\interruptvector.o      idata   0x0000b7       data   0x000000
+.udata_obj\interruptvector.o      udata   0x0000b7       data   0x000000
+   .udata_obj\heartBeat.o      udata   0x0000b7       data   0x000000
+           .idata_c018i.o      idata   0x0000b7       data   0x000000
+                 APP_DATA      idata   0x000100       data   0x000014
                    .stack      udata   0x000e00       data   0x000100
             SFR_UNBANKED0      udata   0x000f62       data   0x00009e
 
@@ -111,52 +119,61 @@ Linker Map File - Created Tue Mar 17 13:11:48 2015
                               Program Memory Usage 
                                Start         End      
                            ---------   ---------      
-                            0x000000    0x000fd3      
+                            0x000000    0x00113d      
                             0x300001    0x300006      
                             0x300008    0x30000d      
-            4064 out of 132120 program addresses used, program memory utilization is 3%
+            4426 out of 132120 program addresses used, program memory utilization is 3%
 
 
 
                               Symbols - Sorted by Name
                      Name    Address   Location    Storage File                     
                 ---------  ---------  ---------  --------- ---------                
-                 BRD_init   0x000a86    program     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\board.c
-                    D1K_1   0x000ef0    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\delays\d1ktcyx.asm
-                     D1Kx   0x000eee    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\delays\d1ktcyx.asm
-              Delay1KTCYx   0x000ee4    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\delays\d1ktcyx.asm
+                 APP_Init   0x000cfc    program     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\app.c
+                 BRD_init   0x000b46    program     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\board.c
+                    D10_1   0x0010d8    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\delays\d10tcyx.asm
+                     D10x   0x0010d0    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\delays\d10tcyx.asm
+                    D1K_1   0x00105e    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\delays\d1ktcyx.asm
+                     D1Kx   0x00105c    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\delays\d1ktcyx.asm
+              Delay10TCYx   0x0010c8    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\delays\d10tcyx.asm
+              Delay1KTCYx   0x001052    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\delays\d1ktcyx.asm
          EnableInterrupts   0x00001a    program     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\interruptvector.c
-                 FXD3232U   0x000d38    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\math\fxd3232u.c
-               GetAppTime   0x000a36    program     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\timer.c
-                  HB_init   0x000f40    program     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\heartBeat.c
-                  HB_task   0x000f46    program     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\heartBeat.c
-               OpenTimer0   0x000eac    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\pmc_common\Timers\t0open.c
-               OpenTimer1   0x000dc2    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\pmc_common\Timers\t1open.c
-               OpenTimer3   0x000d80    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\pmc_common\Timers\t3open.c
-          SSD_CreateField   0x000126    program     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\ssd.c
-                 SSD_Init   0x000060    program     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\ssd.c
-              SSD_Refresh   0x00052a    program     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\ssd.c
-                 SSD_Test   0x000462    program     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\ssd.c
-          SSD_UpdateField   0x000212    program     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\ssd.c
-   SSD_UpdateFieldpartial   0x000348    program     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\ssd.c
-                 TMR0_ISR   0x000700    program     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\timer.c
-                TMR0_init   0x000962    program     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\timer.c
-                 TMR1_ISR   0x0007ee    program     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\timer.c
-                TMR1_init   0x0009a8    program     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\timer.c
-                 TMR3_ISR   0x0008a8    program     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\timer.c
-                TMR3_init   0x0009f0    program     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\timer.c
-              WriteTimer0   0x000e74    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\pmc_common\Timers\t0write.c
-              WriteTimer1   0x000e3c    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\pmc_common\Timers\t1write.c
-              WriteTimer3   0x000e04    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\pmc_common\Timers\t3write.c
-        _D1KTCYXCODE_0010   0x000ef4    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\delays\d1ktcyx.asm
-        _D1KTCYXCODE_0016   0x000efa    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\delays\d1ktcyx.asm
+                 FXD3232U   0x000ea6    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\math\fxd3232u.c
+               GetAppTime   0x000af6    program     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\timer.c
+                  HB_init   0x0010ae    program     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\heartBeat.c
+                  HB_task   0x0010b4    program     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\heartBeat.c
+               OpenTimer0   0x00101a    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\pmc_common\Timers\t0open.c
+               OpenTimer1   0x000f30    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\pmc_common\Timers\t1open.c
+               OpenTimer3   0x000eee    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\pmc_common\Timers\t3open.c
+             SSD_BlinkOff   0x0006f0    program     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\ssd.c
+              SSD_BlinkOn   0x00068e    program     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\ssd.c
+          SSD_CreateField   0x000132    program     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\ssd.c
+                 SSD_Init   0x00006c    program     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\ssd.c
+              SSD_Refresh   0x000536    program     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\ssd.c
+                 SSD_Test   0x00046e    program     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\ssd.c
+          SSD_UpdateField   0x00021e    program     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\ssd.c
+   SSD_UpdateFieldpartial   0x000354    program     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\ssd.c
+                 TMR0_ISR   0x0007c0    program     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\timer.c
+                TMR0_init   0x000a22    program     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\timer.c
+                 TMR1_ISR   0x0008ae    program     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\timer.c
+                TMR1_init   0x000a68    program     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\timer.c
+                 TMR3_ISR   0x000968    program     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\timer.c
+                TMR3_init   0x000ab0    program     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\timer.c
+              WriteTimer0   0x000fe2    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\pmc_common\Timers\t0write.c
+              WriteTimer1   0x000faa    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\pmc_common\Timers\t1write.c
+              WriteTimer3   0x000f72    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\pmc_common\Timers\t3write.c
+        _D10TCYXCODE_000A   0x0010d2    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\delays\d10tcyx.asm
+        _D10TCYXCODE_000C   0x0010d4    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\delays\d10tcyx.asm
+        _D10TCYXCODE_000E   0x0010d6    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\delays\d10tcyx.asm
+        _D1KTCYXCODE_0010   0x001062    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\delays\d1ktcyx.asm
+        _D1KTCYXCODE_0016   0x001068    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\delays\d1ktcyx.asm
            ___if_lbl00001   0x000010    program     static                          
            ___if_lbl00002   0x000018    program     static                          
-       ___return_lbl00000   0x000018    program     static                          
-       ___return_lbl00000   0x000d7e    program     static                          
        ___return_lbl00000   0x000004    program     static                          
-       ___return_lbl00001   0x000f3e    program     static                          
-       ___return_lbl00002   0x000cd8    program     static                          
+       ___return_lbl00000   0x000eec    program     static                          
+       ___return_lbl00000   0x000018    program     static                          
+       ___return_lbl00001   0x0010ac    program     static                          
+       ___return_lbl00002   0x000e46    program     static                          
                __config_0   0x300001    program     static D:\IDEONICS\reposatory\SSD\SSD_Test\source\main.c
                __config_1   0x300002    program     static D:\IDEONICS\reposatory\SSD\SSD_Test\source\main.c
               __config_10   0x30000c    program     static D:\IDEONICS\reposatory\SSD\SSD_Test\source\main.c
@@ -170,26 +187,26 @@ Linker Map File - Created Tue Mar 17 13:11:48 2015
                __config_8   0x30000a    program     static D:\IDEONICS\reposatory\SSD\SSD_Test\source\main.c
                __config_9   0x30000b    program     static D:\IDEONICS\reposatory\SSD\SSD_Test\source\main.c
                    __init   0x000006    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\stdclib\__init.c
-            __zero_memory   0x000f04    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
-                _do_cinit   0x000c3c    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+            __zero_memory   0x001072    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
+                _do_cinit   0x000daa    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
                    _entry   0x000000    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                   _false   0x000d7a    program     static                          
-                 _startup   0x000f24    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                compare_l   0x000f1a    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
-                copy_loop   0x000cae    program     static                          
-            copy_one_byte   0x000cb4    program     static                          
-                     done   0x000cd8    program     static                          
-             done_copying   0x000cc2    program     static                          
+                   _false   0x000ee8    program     static                          
+                 _startup   0x001092    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                compare_l   0x001088    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
+                copy_loop   0x000e1c    program     static                          
+            copy_one_byte   0x000e22    program     static                          
+                     done   0x000e46    program     static                          
+             done_copying   0x000e30    program     static                          
            high_interrupt   0x000008    program     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\interruptvector.c
-                     loop   0x000f34    program     static                          
-                     loop   0x000d46    program     static                          
-                   loop_h   0x000f12    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
-                   loop_l   0x000f1c    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
-                     main   0x000cda    program     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\main.c
-                     test   0x000c56    program     static                          
-                 validate   0x0006bc    program     static D:\IDEONICS\reposatory\SSD\SSD_Test\source\ssd.c
-           writeToSSDPort   0x000682    program     static D:\IDEONICS\reposatory\SSD\SSD_Test\source\ssd.c
-               zero_block   0x000f12    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
+                     loop   0x0010a2    program     static                          
+                     loop   0x000eb4    program     static                          
+                   loop_h   0x001080    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
+                   loop_l   0x00108a    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
+                     main   0x000e48    program     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\main.c
+                     test   0x000dc4    program     static                          
+                 validate   0x00077c    program     static D:\IDEONICS\reposatory\SSD\SSD_Test\source\ssd.c
+           writeToSSDPort   0x000738    program     static D:\IDEONICS\reposatory\SSD\SSD_Test\source\ssd.c
+               zero_block   0x001080    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                    ADCON0   0x000fc2       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                ADCON0bits   0x000fc2       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                    ADCON1   0x000fc1       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
@@ -199,7 +216,7 @@ Linker Map File - Created Tue Mar 17 13:11:48 2015
                     ADRES   0x000fc3       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                    ADRESH   0x000fc4       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                    ADRESL   0x000fc3       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
-             AppTimestamp   0x0000c8       data     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\timer.c
+             AppTimestamp   0x00009a       data     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\timer.c
                   BAUDCON   0x000f7e       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                  BAUDCON1   0x000f7e       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
              BAUDCON1bits   0x000f7e       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
@@ -395,7 +412,7 @@ Linker Map File - Created Tue Mar 17 13:11:48 2015
                    RCSTA2   0x000f6b       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                RCSTA2bits   0x000f6b       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                 RCSTAbits   0x000fab       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
-             SEVENSEGMENT   0x0000cc       data     static D:\IDEONICS\reposatory\SSD\SSD_Test\source\ssd.c
+             SEVENSEGMENT   0x00009e       data     static D:\IDEONICS\reposatory\SSD\SSD_Test\source\ssd.c
                      SIGN   0x00000e       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\math\cmath18.asm
                     SPBRG   0x000faf       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                    SPBRG1   0x000faf       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
@@ -510,21 +527,22 @@ Linker Map File - Created Tue Mar 17 13:11:48 2015
                   __REMB3   0x000000       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\math\aarg.asm
                   __tmp_0   0x000010       data     static D:\IDEONICS\reposatory\SSD\SSD_Test\source\board.c
                   __tmp_0   0x000010       data     static D:\IDEONICS\reposatory\SSD\SSD_Test\source\ssd.c
-           comUpdateCount   0x0000c2       data     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\timer.c
-                    count   0x0000bc       data     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\timer.c
-                curr_byte   0x0000da       data     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-               curr_entry   0x0000dc       data     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                 data_ptr   0x0000de       data     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-          eMBUpdate_count   0x0000c0       data     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\timer.c
-           heartBeatCount   0x0000be       data     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\timer.c
-                 ledState   0x0000e4       data     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\heartBeat.c
-                 ledState   0x0000e3       data     static D:\IDEONICS\reposatory\SSD\SSD_Test\source\board.c
-           mmdUpdateCount   0x0000c4       data     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\timer.c
-                     prom   0x0000d7       data     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                      app   0x000100       data     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\app.c
+           comUpdateCount   0x000094       data     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\timer.c
+                    count   0x00008e       data     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\timer.c
+                curr_byte   0x0000ac       data     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+               curr_entry   0x0000ae       data     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                 data_ptr   0x0000b0       data     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+          eMBUpdate_count   0x000092       data     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\timer.c
+           heartBeatCount   0x000090       data     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\timer.c
+                 ledState   0x0000b6       data     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\heartBeat.c
+                 ledState   0x0000b5       data     static D:\IDEONICS\reposatory\SSD\SSD_Test\source\board.c
+           mmdUpdateCount   0x000096       data     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\timer.c
+                     prom   0x0000a9       data     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
                       ssd   0x000060       data     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\ssd.c
-               tickPeriod   0x0000e1       data     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\board.c
-     timeStampUpdateCount   0x0000c6       data     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\timer.c
-                      tmr   0x0000b0       data     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\timer.c
+               tickPeriod   0x0000b3       data     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\board.c
+     timeStampUpdateCount   0x000098       data     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\timer.c
+                      tmr   0x000082       data     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\timer.c
 
 
 
@@ -539,55 +557,64 @@ Linker Map File - Created Tue Mar 17 13:11:48 2015
        ___return_lbl00000   0x000018    program     static                          
            ___if_lbl00002   0x000018    program     static                          
          EnableInterrupts   0x00001a    program     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\interruptvector.c
-                 SSD_Init   0x000060    program     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\ssd.c
-          SSD_CreateField   0x000126    program     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\ssd.c
-          SSD_UpdateField   0x000212    program     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\ssd.c
-   SSD_UpdateFieldpartial   0x000348    program     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\ssd.c
-                 SSD_Test   0x000462    program     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\ssd.c
-              SSD_Refresh   0x00052a    program     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\ssd.c
-           writeToSSDPort   0x000682    program     static D:\IDEONICS\reposatory\SSD\SSD_Test\source\ssd.c
-                 validate   0x0006bc    program     static D:\IDEONICS\reposatory\SSD\SSD_Test\source\ssd.c
-                 TMR0_ISR   0x000700    program     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\timer.c
-                 TMR1_ISR   0x0007ee    program     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\timer.c
-                 TMR3_ISR   0x0008a8    program     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\timer.c
-                TMR0_init   0x000962    program     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\timer.c
-                TMR1_init   0x0009a8    program     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\timer.c
-                TMR3_init   0x0009f0    program     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\timer.c
-               GetAppTime   0x000a36    program     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\timer.c
-                 BRD_init   0x000a86    program     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\board.c
-                _do_cinit   0x000c3c    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                     test   0x000c56    program     static                          
-                copy_loop   0x000cae    program     static                          
-            copy_one_byte   0x000cb4    program     static                          
-             done_copying   0x000cc2    program     static                          
-                     done   0x000cd8    program     static                          
-       ___return_lbl00002   0x000cd8    program     static                          
-                     main   0x000cda    program     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\main.c
-                 FXD3232U   0x000d38    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\math\fxd3232u.c
-                     loop   0x000d46    program     static                          
-                   _false   0x000d7a    program     static                          
-       ___return_lbl00000   0x000d7e    program     static                          
-               OpenTimer3   0x000d80    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\pmc_common\Timers\t3open.c
-               OpenTimer1   0x000dc2    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\pmc_common\Timers\t1open.c
-              WriteTimer3   0x000e04    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\pmc_common\Timers\t3write.c
-              WriteTimer1   0x000e3c    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\pmc_common\Timers\t1write.c
-              WriteTimer0   0x000e74    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\pmc_common\Timers\t0write.c
-               OpenTimer0   0x000eac    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\pmc_common\Timers\t0open.c
-              Delay1KTCYx   0x000ee4    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\delays\d1ktcyx.asm
-                     D1Kx   0x000eee    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\delays\d1ktcyx.asm
-                    D1K_1   0x000ef0    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\delays\d1ktcyx.asm
-        _D1KTCYXCODE_0010   0x000ef4    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\delays\d1ktcyx.asm
-        _D1KTCYXCODE_0016   0x000efa    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\delays\d1ktcyx.asm
-            __zero_memory   0x000f04    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
-                   loop_h   0x000f12    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
-               zero_block   0x000f12    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
-                compare_l   0x000f1a    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
-                   loop_l   0x000f1c    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
-                 _startup   0x000f24    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                     loop   0x000f34    program     static                          
-       ___return_lbl00001   0x000f3e    program     static                          
-                  HB_init   0x000f40    program     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\heartBeat.c
-                  HB_task   0x000f46    program     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\heartBeat.c
+                 SSD_Init   0x00006c    program     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\ssd.c
+          SSD_CreateField   0x000132    program     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\ssd.c
+          SSD_UpdateField   0x00021e    program     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\ssd.c
+   SSD_UpdateFieldpartial   0x000354    program     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\ssd.c
+                 SSD_Test   0x00046e    program     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\ssd.c
+              SSD_Refresh   0x000536    program     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\ssd.c
+              SSD_BlinkOn   0x00068e    program     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\ssd.c
+             SSD_BlinkOff   0x0006f0    program     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\ssd.c
+           writeToSSDPort   0x000738    program     static D:\IDEONICS\reposatory\SSD\SSD_Test\source\ssd.c
+                 validate   0x00077c    program     static D:\IDEONICS\reposatory\SSD\SSD_Test\source\ssd.c
+                 TMR0_ISR   0x0007c0    program     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\timer.c
+                 TMR1_ISR   0x0008ae    program     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\timer.c
+                 TMR3_ISR   0x000968    program     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\timer.c
+                TMR0_init   0x000a22    program     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\timer.c
+                TMR1_init   0x000a68    program     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\timer.c
+                TMR3_init   0x000ab0    program     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\timer.c
+               GetAppTime   0x000af6    program     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\timer.c
+                 BRD_init   0x000b46    program     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\board.c
+                 APP_Init   0x000cfc    program     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\app.c
+                _do_cinit   0x000daa    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                     test   0x000dc4    program     static                          
+                copy_loop   0x000e1c    program     static                          
+            copy_one_byte   0x000e22    program     static                          
+             done_copying   0x000e30    program     static                          
+                     done   0x000e46    program     static                          
+       ___return_lbl00002   0x000e46    program     static                          
+                     main   0x000e48    program     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\main.c
+                 FXD3232U   0x000ea6    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\math\fxd3232u.c
+                     loop   0x000eb4    program     static                          
+                   _false   0x000ee8    program     static                          
+       ___return_lbl00000   0x000eec    program     static                          
+               OpenTimer3   0x000eee    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\pmc_common\Timers\t3open.c
+               OpenTimer1   0x000f30    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\pmc_common\Timers\t1open.c
+              WriteTimer3   0x000f72    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\pmc_common\Timers\t3write.c
+              WriteTimer1   0x000faa    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\pmc_common\Timers\t1write.c
+              WriteTimer0   0x000fe2    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\pmc_common\Timers\t0write.c
+               OpenTimer0   0x00101a    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\pmc_common\Timers\t0open.c
+              Delay1KTCYx   0x001052    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\delays\d1ktcyx.asm
+                     D1Kx   0x00105c    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\delays\d1ktcyx.asm
+                    D1K_1   0x00105e    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\delays\d1ktcyx.asm
+        _D1KTCYXCODE_0010   0x001062    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\delays\d1ktcyx.asm
+        _D1KTCYXCODE_0016   0x001068    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\delays\d1ktcyx.asm
+            __zero_memory   0x001072    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
+                   loop_h   0x001080    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
+               zero_block   0x001080    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
+                compare_l   0x001088    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
+                   loop_l   0x00108a    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
+                 _startup   0x001092    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                     loop   0x0010a2    program     static                          
+       ___return_lbl00001   0x0010ac    program     static                          
+                  HB_init   0x0010ae    program     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\heartBeat.c
+                  HB_task   0x0010b4    program     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\heartBeat.c
+              Delay10TCYx   0x0010c8    program     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\delays\d10tcyx.asm
+                     D10x   0x0010d0    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\delays\d10tcyx.asm
+        _D10TCYXCODE_000A   0x0010d2    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\delays\d10tcyx.asm
+        _D10TCYXCODE_000C   0x0010d4    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\delays\d10tcyx.asm
+        _D10TCYXCODE_000E   0x0010d6    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\delays\d10tcyx.asm
+                    D10_1   0x0010d8    program     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\delays\d10tcyx.asm
                __config_0   0x300001    program     static D:\IDEONICS\reposatory\SSD\SSD_Test\source\main.c
                __config_1   0x300002    program     static D:\IDEONICS\reposatory\SSD\SSD_Test\source\main.c
                __config_2   0x300003    program     static D:\IDEONICS\reposatory\SSD\SSD_Test\source\main.c
@@ -621,28 +648,29 @@ Linker Map File - Created Tue Mar 17 13:11:48 2015
                      SIGN   0x00000e       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\math\cmath18.asm
             __FPFLAGSbits   0x00000f       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\math\cmath18.asm
                 __FPFLAGS   0x00000f       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\math\cmath18.asm
-                  __tmp_0   0x000010       data     static D:\IDEONICS\reposatory\SSD\SSD_Test\source\ssd.c
                   __tmp_0   0x000010       data     static D:\IDEONICS\reposatory\SSD\SSD_Test\source\board.c
+                  __tmp_0   0x000010       data     static D:\IDEONICS\reposatory\SSD\SSD_Test\source\ssd.c
             DelayCounter1   0x000019       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\delays\delayd1.asm
                       ssd   0x000060       data     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\ssd.c
-                      tmr   0x0000b0       data     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\timer.c
-                    count   0x0000bc       data     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\timer.c
-           heartBeatCount   0x0000be       data     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\timer.c
-          eMBUpdate_count   0x0000c0       data     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\timer.c
-           comUpdateCount   0x0000c2       data     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\timer.c
-           mmdUpdateCount   0x0000c4       data     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\timer.c
-     timeStampUpdateCount   0x0000c6       data     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\timer.c
-             AppTimestamp   0x0000c8       data     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\timer.c
-             SEVENSEGMENT   0x0000cc       data     static D:\IDEONICS\reposatory\SSD\SSD_Test\source\ssd.c
-                     prom   0x0000d7       data     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                curr_byte   0x0000da       data     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-               curr_entry   0x0000dc       data     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                 data_ptr   0x0000de       data     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-               tickPeriod   0x0000e1       data     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\board.c
-                 ledState   0x0000e3       data     static D:\IDEONICS\reposatory\SSD\SSD_Test\source\board.c
-                 ledState   0x0000e4       data     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\heartBeat.c
-             SSP2CON2bits   0x000f62       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
+                      tmr   0x000082       data     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\timer.c
+                    count   0x00008e       data     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\timer.c
+           heartBeatCount   0x000090       data     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\timer.c
+          eMBUpdate_count   0x000092       data     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\timer.c
+           comUpdateCount   0x000094       data     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\timer.c
+           mmdUpdateCount   0x000096       data     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\timer.c
+     timeStampUpdateCount   0x000098       data     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\timer.c
+             AppTimestamp   0x00009a       data     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\timer.c
+             SEVENSEGMENT   0x00009e       data     static D:\IDEONICS\reposatory\SSD\SSD_Test\source\ssd.c
+                     prom   0x0000a9       data     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                curr_byte   0x0000ac       data     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+               curr_entry   0x0000ae       data     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                 data_ptr   0x0000b0       data     static E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+               tickPeriod   0x0000b3       data     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\board.c
+                 ledState   0x0000b5       data     static D:\IDEONICS\reposatory\SSD\SSD_Test\source\board.c
+                 ledState   0x0000b6       data     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\heartBeat.c
+                      app   0x000100       data     extern D:\IDEONICS\reposatory\SSD\SSD_Test\source\app.c
                  SSP2CON2   0x000f62       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
+             SSP2CON2bits   0x000f62       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                  SSP2CON1   0x000f63       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
              SSP2CON1bits   0x000f63       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
              SSP2STATbits   0x000f64       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
@@ -678,35 +706,35 @@ Linker Map File - Created Tue Mar 17 13:11:48 2015
                 T4CONbits   0x000f76       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                       PR4   0x000f77       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                      TMR4   0x000f78       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
-             ECCP1DELbits   0x000f79       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                  ECCP1DEL   0x000f79       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
-             BAUDCON2bits   0x000f7c       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
+             ECCP1DELbits   0x000f79       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                  BAUDCON2   0x000f7c       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
+             BAUDCON2bits   0x000f7c       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                   SPBRGH2   0x000f7d       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
              BAUDCON1bits   0x000f7e       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                  BAUDCON1   0x000f7e       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
-              BAUDCONbits   0x000f7e       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                   BAUDCON   0x000f7e       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
+              BAUDCONbits   0x000f7e       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                    SPBRGH   0x000f7f       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                   SPBRGH1   0x000f7f       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
-                PORTAbits   0x000f80       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                     PORTA   0x000f80       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
+                PORTAbits   0x000f80       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                 PORTBbits   0x000f81       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                     PORTB   0x000f81       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                 PORTCbits   0x000f82       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                     PORTC   0x000f82       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                 PORTDbits   0x000f83       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                     PORTD   0x000f83       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
-                PORTEbits   0x000f84       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                     PORTE   0x000f84       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
+                PORTEbits   0x000f84       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                     PORTF   0x000f85       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                 PORTFbits   0x000f85       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
-                    PORTG   0x000f86       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                 PORTGbits   0x000f86       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
+                    PORTG   0x000f86       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                     PORTH   0x000f87       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                 PORTHbits   0x000f87       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
-                PORTJbits   0x000f88       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                     PORTJ   0x000f88       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
+                PORTJbits   0x000f88       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                  LATAbits   0x000f89       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                      LATA   0x000f89       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                  LATBbits   0x000f8a       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
@@ -715,40 +743,40 @@ Linker Map File - Created Tue Mar 17 13:11:48 2015
                      LATC   0x000f8b       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                  LATDbits   0x000f8c       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                      LATD   0x000f8c       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
-                 LATEbits   0x000f8d       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                      LATE   0x000f8d       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
-                 LATFbits   0x000f8e       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
+                 LATEbits   0x000f8d       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                      LATF   0x000f8e       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
-                 LATGbits   0x000f8f       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
+                 LATFbits   0x000f8e       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                      LATG   0x000f8f       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
+                 LATGbits   0x000f8f       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                  LATHbits   0x000f90       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                      LATH   0x000f90       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
-                     LATJ   0x000f91       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                  LATJbits   0x000f91       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
-                TRISAbits   0x000f92       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
-                    TRISA   0x000f92       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
-                 DDRAbits   0x000f92       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
+                     LATJ   0x000f91       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                      DDRA   0x000f92       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
+                 DDRAbits   0x000f92       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
+                    TRISA   0x000f92       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
+                TRISAbits   0x000f92       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                 TRISBbits   0x000f93       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                     TRISB   0x000f93       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
-                     DDRB   0x000f93       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                  DDRBbits   0x000f93       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
-                TRISCbits   0x000f94       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
+                     DDRB   0x000f93       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                     TRISC   0x000f94       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
+                TRISCbits   0x000f94       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                  DDRCbits   0x000f94       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                      DDRC   0x000f94       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
-                TRISDbits   0x000f95       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
-                    TRISD   0x000f95       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                  DDRDbits   0x000f95       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                      DDRD   0x000f95       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
-                    TRISE   0x000f96       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
+                    TRISD   0x000f95       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
+                TRISDbits   0x000f95       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                 TRISEbits   0x000f96       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
+                    TRISE   0x000f96       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                      DDRE   0x000f96       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                  DDREbits   0x000f96       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
+                     DDRF   0x000f97       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
+                 DDRFbits   0x000f97       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                 TRISFbits   0x000f97       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                     TRISF   0x000f97       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
-                 DDRFbits   0x000f97       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
-                     DDRF   0x000f97       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                      DDRG   0x000f98       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                  DDRGbits   0x000f98       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                 TRISGbits   0x000f98       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
@@ -757,10 +785,10 @@ Linker Map File - Created Tue Mar 17 13:11:48 2015
                     TRISH   0x000f99       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                      DDRH   0x000f99       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                  DDRHbits   0x000f99       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
-                TRISJbits   0x000f9a       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
-                    TRISJ   0x000f9a       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
-                     DDRJ   0x000f9a       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                  DDRJbits   0x000f9a       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
+                    TRISJ   0x000f9a       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
+                TRISJbits   0x000f9a       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
+                     DDRJ   0x000f9a       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                   OSCTUNE   0x000f9b       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
               OSCTUNEbits   0x000f9b       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                    MEMCON   0x000f9c       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
@@ -779,60 +807,60 @@ Linker Map File - Created Tue Mar 17 13:11:48 2015
                  IPR2bits   0x000fa2       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                      PIE3   0x000fa3       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                  PIE3bits   0x000fa3       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
-                 PIR3bits   0x000fa4       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                      PIR3   0x000fa4       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
+                 PIR3bits   0x000fa4       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                      IPR3   0x000fa5       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                  IPR3bits   0x000fa5       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
-               EECON1bits   0x000fa6       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                    EECON1   0x000fa6       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
+               EECON1bits   0x000fa6       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                    EECON2   0x000fa7       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                    EEDATA   0x000fa8       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                     EEADR   0x000fa9       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                    EEADRH   0x000faa       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                 RCSTAbits   0x000fab       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
-               RCSTA1bits   0x000fab       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
-                   RCSTA1   0x000fab       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                     RCSTA   0x000fab       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
+                   RCSTA1   0x000fab       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
+               RCSTA1bits   0x000fab       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
+                TXSTAbits   0x000fac       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
+               TXSTA1bits   0x000fac       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                    TXSTA1   0x000fac       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                     TXSTA   0x000fac       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
-               TXSTA1bits   0x000fac       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
-                TXSTAbits   0x000fac       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                    TXREG1   0x000fad       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                     TXREG   0x000fad       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
-                   RCREG1   0x000fae       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                     RCREG   0x000fae       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
+                   RCREG1   0x000fae       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                     SPBRG   0x000faf       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                    SPBRG1   0x000faf       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                PSPCONbits   0x000fb0       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                    PSPCON   0x000fb0       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
-                    T3CON   0x000fb1       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                 T3CONbits   0x000fb1       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
+                    T3CON   0x000fb1       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                     TMR3L   0x000fb2       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                     TMR3H   0x000fb3       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
-                CMCONbits   0x000fb4       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                     CMCON   0x000fb4       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
+                CMCONbits   0x000fb4       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                CVRCONbits   0x000fb5       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                    CVRCON   0x000fb5       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
-              ECCP1ASbits   0x000fb6       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                   ECCP1AS   0x000fb6       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
+              ECCP1ASbits   0x000fb6       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                   CCP3CON   0x000fb7       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
               CCP3CONbits   0x000fb7       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                  ECCP3CON   0x000fb7       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
              ECCP3CONbits   0x000fb7       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
-                   CCPR3L   0x000fb8       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                     CCPR3   0x000fb8       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
+                   CCPR3L   0x000fb8       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                    CCPR3H   0x000fb9       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
-              CCP2CONbits   0x000fba       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
-                  CCP2CON   0x000fba       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
-                 ECCP2CON   0x000fba       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
              ECCP2CONbits   0x000fba       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
+                  CCP2CON   0x000fba       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
+              CCP2CONbits   0x000fba       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
+                 ECCP2CON   0x000fba       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                     CCPR2   0x000fbb       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                    CCPR2L   0x000fbb       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                    CCPR2H   0x000fbc       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                  ECCP1CON   0x000fbd       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
-                  CCP1CON   0x000fbd       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
              ECCP1CONbits   0x000fbd       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
               CCP1CONbits   0x000fbd       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
+                  CCP1CON   0x000fbd       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                    CCPR1L   0x000fbe       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                     CCPR1   0x000fbe       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                    CCPR1H   0x000fbf       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
@@ -842,49 +870,49 @@ Linker Map File - Created Tue Mar 17 13:11:48 2015
                    ADCON1   0x000fc1       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                ADCON0bits   0x000fc2       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                    ADCON0   0x000fc2       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
-                   ADRESL   0x000fc3       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                     ADRES   0x000fc3       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
+                   ADRESL   0x000fc3       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                    ADRESH   0x000fc4       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
-              SSPCON2bits   0x000fc5       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
-                  SSPCON2   0x000fc5       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
-             SSP1CON2bits   0x000fc5       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                  SSP1CON2   0x000fc5       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
+             SSP1CON2bits   0x000fc5       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
+                  SSPCON2   0x000fc5       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
+              SSPCON2bits   0x000fc5       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                  SSP1CON1   0x000fc6       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
              SSP1CON1bits   0x000fc6       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
-              SSPCON1bits   0x000fc6       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                   SSPCON1   0x000fc6       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
-              SSPSTATbits   0x000fc7       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
+              SSPCON1bits   0x000fc6       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                  SSP1STAT   0x000fc7       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
-                  SSPSTAT   0x000fc7       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
              SSP1STATbits   0x000fc7       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
-                  SSP1ADD   0x000fc8       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
+                  SSPSTAT   0x000fc7       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
+              SSPSTATbits   0x000fc7       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                    SSPADD   0x000fc8       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
-                  SSP1BUF   0x000fc9       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
+                  SSP1ADD   0x000fc8       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                    SSPBUF   0x000fc9       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
+                  SSP1BUF   0x000fc9       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                 T2CONbits   0x000fca       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                     T2CON   0x000fca       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                       PR2   0x000fcb       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                      TMR2   0x000fcc       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
-                    T1CON   0x000fcd       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                 T1CONbits   0x000fcd       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
+                    T1CON   0x000fcd       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                     TMR1L   0x000fce       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                     TMR1H   0x000fcf       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
-                 RCONbits   0x000fd0       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                      RCON   0x000fd0       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
-                   WDTCON   0x000fd1       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
+                 RCONbits   0x000fd0       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                WDTCONbits   0x000fd1       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
-               LVDCONbits   0x000fd2       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
+                   WDTCON   0x000fd1       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                    LVDCON   0x000fd2       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
-              HLVDCONbits   0x000fd2       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
+               LVDCONbits   0x000fd2       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                   HLVDCON   0x000fd2       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
-               OSCCONbits   0x000fd3       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
+              HLVDCONbits   0x000fd2       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                    OSCCON   0x000fd3       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
-                    T0CON   0x000fd5       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
+               OSCCONbits   0x000fd3       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                 T0CONbits   0x000fd5       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
+                    T0CON   0x000fd5       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                     TMR0L   0x000fd6       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                     TMR0H   0x000fd7       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
-               STATUSbits   0x000fd8       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                    STATUS   0x000fd8       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
+               STATUSbits   0x000fd8       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                      FSR2   0x000fd9       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                     FSR2L   0x000fd9       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                     FSR2H   0x000fda       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
@@ -894,8 +922,8 @@ Linker Map File - Created Tue Mar 17 13:11:48 2015
                  POSTINC2   0x000fde       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                     INDF2   0x000fdf       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                       BSR   0x000fe0       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
-                    FSR1L   0x000fe1       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                      FSR1   0x000fe1       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
+                    FSR1L   0x000fe1       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                     FSR1H   0x000fe2       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                    PLUSW1   0x000fe3       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                   PREINC1   0x000fe4       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
@@ -913,26 +941,26 @@ Linker Map File - Created Tue Mar 17 13:11:48 2015
                     INDF0   0x000fef       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                   INTCON3   0x000ff0       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
               INTCON3bits   0x000ff0       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
-              INTCON2bits   0x000ff1       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                   INTCON2   0x000ff1       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
-                   INTCON   0x000ff2       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
+              INTCON2bits   0x000ff1       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                INTCONbits   0x000ff2       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
-                    PRODL   0x000ff3       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
+                   INTCON   0x000ff2       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                      PROD   0x000ff3       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
+                    PRODL   0x000ff3       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                     PRODH   0x000ff4       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                    TABLAT   0x000ff5       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
-                   TBLPTR   0x000ff6       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                   TBLPTRL   0x000ff6       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
+                   TBLPTR   0x000ff6       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                   TBLPTRH   0x000ff7       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                   TBLPTRU   0x000ff8       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                       PCL   0x000ff9       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                        PC   0x000ff9       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                    PCLATH   0x000ffa       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                    PCLATU   0x000ffb       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
-               STKPTRbits   0x000ffc       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                    STKPTR   0x000ffc       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
-                     TOSL   0x000ffd       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
+               STKPTRbits   0x000ffc       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                       TOS   0x000ffd       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
+                     TOSL   0x000ffd       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                      TOSH   0x000ffe       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
                      TOSU   0x000fff       data     extern E:\c18v3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f8722.asm
 
