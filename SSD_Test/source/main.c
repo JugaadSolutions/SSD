@@ -36,6 +36,7 @@
 #include "board.h"
 #include "timer.h"	// Timer related functions
 #include "heartBeat.h"
+#include "ssd.h"
 
 /*
 *------------------------------------------------------------------------------
@@ -168,6 +169,11 @@ void main(void)
 
 	TMR0_init(TICK_PERIOD,0);	//initialize timer0
 
+	SSD_Init();					// initialize ssd module 
+
+	SSD_Refresh();
+
+
 
 	EnableInterrupts();
 
@@ -175,7 +181,7 @@ void main(void)
 	while(1)
 	{
 
-		if(  heartBeatCount >= 2000 )
+		if(  heartBeatCount >= 200 )
 		{
 	
 			HB_task();

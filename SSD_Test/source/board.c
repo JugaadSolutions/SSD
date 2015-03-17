@@ -171,7 +171,13 @@ void BRD_init(unsigned long systemFreauency )
 
 
 
-
+	//DATA OUT
+   	DATA_PORT_A_DIRECTION = PORT_OUT;
+//	DATA_PORT_B_DIRECTION = PORT_OUT;
+   
+	//DIGIT SELECTION
+	DIGIT_PORT_A_DIRECTION = PORT_OUT;
+	DIGIT_PORT_B_DIRECTION = PORT_OUT;
 	DelayMs(100);
 
 }

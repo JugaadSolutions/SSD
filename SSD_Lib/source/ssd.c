@@ -42,7 +42,7 @@ SSD ssd = {0};
 *------------------------------------------------------------------------------
 */
 
-static void writeToDisplayPort( UINT8, UINT8 );
+static void writeToSSDPort( UINT8, UINT8 );
 static UINT8 validate( UINT8 value );
 /*
 *------------------------------------------------------------------------------

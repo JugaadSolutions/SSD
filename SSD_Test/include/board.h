@@ -62,6 +62,16 @@
 #define		HEART_BEAT_DIR			TRISGbits.TRISG0
 
 
+//Seven segment digit
+#define	DIGIT_PORT_A               PORTA
+#define DIGIT_PORT_A_DIRECTION     TRISA
+
+#define DIGIT_PORT_B               PORTB
+#define DIGIT_PORT_B_DIRECTION     TRISB
+
+//Seven segment data
+#define	DATA_PORT_A        	       PORTH
+#define DATA_PORT_A_DIRECTION  	   TRISH
 			
 /*
 *------------------------------------------------------------------------------

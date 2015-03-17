@@ -94,7 +94,7 @@ enum
 *	SSD module configuration
 *----------------------------------------*/
 #define SSD_TEST
-//#define COMMON_CATHODE
+#define COMMON_CATHODE
 
 #define MAX_DIGITS 26
 #define MAX_FIELDS 4

@@ -5,10 +5,10 @@ device=PIC18F8722
 [PATH_INFO]
 BuildDirPolicy=BuildDirIsProjectDir
 dir_src=
-dir_bin=
-dir_tmp=
+dir_bin=SSD_Test/output
+dir_tmp=SSD_Test/obj
 dir_sin=
-dir_inc=
+dir_inc=SSD_Test/include;C:\Program Files\Microchip\mplabc18\v3.46\h
 dir_lib=
 dir_lkr=
 [CAT_FILTERS]
