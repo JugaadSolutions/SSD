@@ -38,6 +38,7 @@
 #include "heartBeat.h"
 #include "ssd.h"
 #include "app.h"
+#include "config.h"
 
 /*
 *------------------------------------------------------------------------------
@@ -168,15 +169,16 @@ void main(void)
 
 	
 
-	TMR0_init(TICK_PERIOD,0);	//initialize timer0
+//	TMR0_init(TICK_PERIOD,0);	//initialize timer0
+//	 SSD_TEST(1);;
+	SSD_Init(PORT_A,PORT_C,PORT_E,PORT_F,PORT_J);					// initialize ssd module 
 
-	SSD_Init();					// initialize ssd module 
-
-	SSD_Refresh();
+//	SSD_Refresh();
 
 //	APP_Init();
 
-//	TMR0_init(TICK_PERIOD,SSD_Refresh);
+	TMR0_init(TICK_PERIOD,SSD_Refresh);
+
 	EnableInterrupts();
 
 

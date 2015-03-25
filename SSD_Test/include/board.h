@@ -41,38 +41,29 @@
 
 
 
-// Heart Beat
-
-
-
-
-// Rs485 / RS232 Serial commnunicaton port
-#define		TX1_EN					PORTGbits.RG3			// TX control for RS485 communication
-#define		TX1_EN_DIR				TRISGbits.TRISG3
-
-#define 	SER1_TX					PORTCbits.RC6 		// serial transmit
-#define		SER1_TX_DIR				TRISCbits.TRISC6
-#define 	SER1_RX					PORTCbits.RC7			// serial receive
-#define		SER1_RX_DIR				TRISCbits.TRISC7
-
-
-
 // HeartBeat
 #define		HEART_BEAT				PORTGbits.RG0			// high - OFF, Low - ON
 #define		HEART_BEAT_DIR			TRISGbits.TRISG0
 
-
+/*
 //Seven segment digit
-#define	DIGIT_PORT_A               PORTE
-#define DIGIT_PORT_A_DIRECTION     TRISE
-
-#define DIGIT_PORT_B               PORTB
-#define DIGIT_PORT_B_DIRECTION     TRISB
-
-//Seven segment data
-#define	DATA_PORT_A        	       PORTH
-#define DATA_PORT_A_DIRECTION  	   TRISH
-			
+#define PORT_A			PORTA
+#define PORT_A_DIR		TRISA
+#define PORT_B			PORTB
+#define PORT_B_DIR		TRISB
+#define PORT_C			PORTC
+#define PORT_C_DIR		TRISC
+#define PORT_D			PORTD
+#define PORT_D_DIR		TRISD
+#define PORT_E			PORTE
+#define PORT_E_DIR		TRISE
+#define PORT_F			PORTF
+#define PORT_F_DIR		TRISF
+#define PORT_H			PORTH
+#define PORT_H_DIR		TRISH
+#define PORT_J			PORTJ
+#define PORT_J_DIR		TRISJ
+*/
 /*
 *------------------------------------------------------------------------------
 * Public Defines

@@ -8,7 +8,7 @@ dir_src=
 dir_bin=SSD_Lib/output
 dir_tmp=SSD_Lib/obj
 dir_sin=
-dir_inc=C:\Program Files\Microchip\mplabc18\v3.46\h;SSD_Lib/include
+dir_inc=SSD_Lib/include;C:\Program Files\Microchip\mplabc18\v3.46\h
 dir_lib=C:\Program Files (x86)\Microchip\mplabc18\v3.46\lib
 dir_lkr=
 [CAT_FILTERS]
@@ -26,15 +26,23 @@ subfolder_lkr=
 [FILE_SUBFOLDERS]
 file_000=.
 file_001=.
+file_002=.
+file_003=.
 [GENERATED_FILES]
 file_000=no
 file_001=no
+file_002=no
+file_003=no
 [OTHER_FILES]
 file_000=no
 file_001=no
+file_002=no
+file_003=no
 [FILE_INFO]
 file_000=SSD_Lib\source\ssd.c
 file_001=SSD_Lib\include\ssd.h
+file_002=SSD_Lib\include\config.h
+file_003=SSD_Lib\include\utilities.h
 [SUITE_INFO]
 suite_guid={5B7D72DD-9861-47BD-9F60-2BE967BF8416}
 suite_state=build-library generate-relocatable-code

@@ -19,6 +19,15 @@
 #define MHz_16					(16000000UL)	// Hz
 #define MHz_8					(8000000UL)	// Hz
 
+#define PORT_A			0xF80
+#define PORT_B			0xF81
+#define PORT_C			0xF82
+#define PORT_D			0xF83
+#define PORT_E			0xF84
+#define PORT_F			0xF85
+#define PORT_H			0xF87
+#define PORT_J			0xF88
+
 /*----------------------------------------
 *	OSCILLATOR CONFIG
 *----------------------------------------*/
@@ -93,7 +102,7 @@ enum
 /*----------------------------------------
 *	SSD module configuration
 *----------------------------------------*/
-#define SSD_TEST
+
 #define COMMON_CATHODE
 
 #define MAX_DIGITS 8

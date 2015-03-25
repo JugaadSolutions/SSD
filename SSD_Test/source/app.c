@@ -9,6 +9,7 @@ APP app = {0};
 void APP_Init(void)
 {
 	UINT8 i;
+
 	
 	for(i = 0; i < MAX_FIELDS ; i++)
 	{

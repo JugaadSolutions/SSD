@@ -9,7 +9,7 @@
 */
 
 #include "config.h"
-#include "board.h"
+#include "utilities.h"
 #include "typedefs.h"
 
 /*
@@ -37,7 +37,12 @@ typedef struct _SSD
 	UINT8* 	 dispBuffer; // pointer to current display buffer
 	UINT8 	 digitIndex ;				//to point next data in buffer
 	UINT16	 blinkCount;				//counter to be used in blink mode
-	UINT16	 blinkPeriod;				//blink period represented in counts	
+	UINT16	 blinkPeriod;				//blink period represented in counts
+	far UINT8*  digitPort_1;			
+	far UINT8*  digitPort_2;
+	far UINT8*  digitPort_3;
+	far UINT8*  digitPort_4;
+	far UINT8*  dataPort;
 }SSD;
 
 
@@ -60,11 +65,14 @@ Public Function declarations:
 * Function to initialize the ssd fields. All variables in the field will be 
 * initialize to zero, except blink index.
 * 
-* Input :none
+* Input :digitPort_x(x = 1,2,3,4) = adress of digit control port
+		 dataPort				  = adress of seven segement data port
+		
 * return value: none.
 * 
 *------------------------------------------------------------------------------*/
-void  SSD_Init( void );
+void  SSD_Init( UINT8* digitPort_1,UINT8* digitPort_2,UINT8* digitPort_3,UINT8* digitPort_4,UINT8* datatPort);
+
 /*------------------------------------------------------------------------------
 * UINT8 SSD_CreateField(UINT8 digits )
 
