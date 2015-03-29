@@ -13,7 +13,7 @@ UINT16 count = 0;
 UINT16 heartBeatCount  =0 ;
 UINT16 eMBUpdate_count  =0 ;
 UINT16 comUpdateCount = 0;
-UINT16 mmdUpdateCount = 0;
+UINT16 ssdUpdateCount = 0;
 
 INT16 timeStampUpdateCount = TIMESTAMP_DURATION;
 UINT32 AppTimestamp = 0;
@@ -42,7 +42,7 @@ void TMR0_ISR(void)
 	++heartBeatCount;
 	++eMBUpdate_count;
 	++comUpdateCount;
-	++mmdUpdateCount;
+	++ssdUpdateCount;
 
 	--timeStampUpdateCount;
 

@@ -25,7 +25,6 @@ SSD ssd = {0};
 *------------------------------------------------------------------------------
 */
 
-//static void writeToSSDPort( UINT8);
 static UINT8 validate( UINT8 value );
 /*
 *------------------------------------------------------------------------------
@@ -38,7 +37,7 @@ static UINT8 validate( UINT8 value );
 
 
 /*------------------------------------------------------------------------------
-* void  SSD_Init( void )
+* void  SSD_Init( UINT8* digitPort_1,UINT8* digitPort_2,UINT8* digitPort_3,UINT8* digitPort_4,UINT8* dataPort,UINT8 noOfDigits, UINT8 noOfFields)
 *
 * Function to initialize the ssd fields. All variables in the field will be 
 * initialize to zero, except blink index.
@@ -47,33 +46,34 @@ static UINT8 validate( UINT8 value );
 * return value: none.
 * 
 *------------------------------------------------------------------------------*/
-void  SSD_Init( UINT8* digitPort_1,UINT8* digitPort_2,UINT8* digitPort_3,UINT8* digitPort_4,UINT8* dataPort)
+void  SSD_Init( UINT8* digitPort_1,UINT8* digitPort_2,UINT8* digitPort_3,UINT8* digitPort_4,UINT8* dataPort,UINT8 noOfDigits, UINT8 noOfFields)
 {
 	UINT8 i;
-
+	ssd.noOfDigits = noOfDigits;
+	ssd.noOfFields = noOfFields;
 	ssd.digitPort_1 = digitPort_1;
 	ssd.digitPort_2 = digitPort_2;
 	ssd.digitPort_3 = digitPort_3;
 	ssd.digitPort_4 = digitPort_4;
 	ssd.dataPort	= dataPort;
+	ssd.fieldCount = 0;
+	ssd.digitIndex = 0;
+	ssd.dispBuffer = ssd.buffer[STATIC];
 
-
-	for( i = 0; i < MAX_FIELDS; i++ )
+	for( i = 0; i < ssd.noOfFields; i++ )
 	{
 		ssd.fields[i]. ID			 = 0;
 		ssd.fields[i]. bufferIndex	 = 0;
 		ssd.fields[i]. digits		 = 0;
 		ssd.fields[i]. blink 		 = STATIC;
+		ssd.fields[i].blinkPeriod	 = 0;
+		ssd.fields[i].blinkCount	 = 0;
 		ssd.fields[i]. dotIndex 	 = 0xFF;
 	}
 
-	ssd.fieldCount = 0;
-	ssd.digitIndex = 0;
-	ssd.blinkPeriod = 0;
-	ssd.dispBuffer = ssd.buffer[STATIC];
-#if defined (SSD_TEST)
-		SSD_Test( 0 , MAX_DIGITS );
-#endif
+
+
+
 
 }
 
@@ -93,6 +93,8 @@ void  SSD_Init( UINT8* digitPort_1,UINT8* digitPort_2,UINT8* digitPort_3,UINT8* 
 UINT8 SSD_CreateField(UINT8 digits)
 {
 	UINT8 i;  											//for calculation buffer index
+	if(ssd.fields[ssd.fieldCount - 1].ID >= ssd.noOfFields )
+		return 0xFF;
 
 	ssd.fields[ssd.fieldCount].ID 		= ssd.fieldCount;						//field number
 	ssd.fields[ssd.fieldCount].digits 	= digits;								//no of digits of that field
@@ -201,46 +203,57 @@ BOOL SSD_UpdateFieldpartial(UINT8 field_ID , UINT8 *buffer, UINT8 index , UINT8 
 
 
 /*------------------------------------------------------------------------------
-*  void SSD_Test(UINT8 from, UINT8 digits )
+*  UINT8 SSD_Test(UINT8 from, UINT8 digits )
 *
 * Pre-Condition - SSD module must be initialized successfully with a call to SSD_Init
 *
 * Input : 
 *           from - starting index of digits to be tested.
 *           digits - No. of digits to be tested must be < MAX_DIGITS
-* return value: none.
+*
+* return value: True  	- On Success
+*                      False - On failure .
+* 
 * 
 *------------------------------------------------------------------------------*/
-void SSD_Test(UINT8 from, UINT8 digits )
+UINT8 SSD_Test(UINT8 from, UINT8 digits )
 {
 	UINT8 i,j,k;
-/*
-	if( digits > MAX_DIGITS )	//check limits 
+
+	if( digits > ssd.noOfDigits )	//check limits 
 		return FAILURE;
 
-*/
+
 	for( i = from; i < digits; i++)
 	{
 		ssd.buffer[BLINK][i] = SEVENSEGMENT[10];		//clear buffer to be used  during blink  mode
 	}
-	ssd.dispBuffer = ssd.buffer[STATIC];	//set initial display buffer to data(i.e. buffer[0])
+//	ssd.dispBuffer = ssd.buffer[STATIC];	//set initial display buffer to data(i.e. buffer[0])
 
 
 	for(j = from; j < digits ; j++)
 	{
+
 		for( i = 0; i < 11 ; i++)
 		{
+			for(k = 0; k < ssd.noOfDigits; k++)
+			{
+				ssd.dataBuffer[k] = SEVENSEGMENT[10] ;
+				ssd.dataBuffer[j] = SEVENSEGMENT[i] ;
 
-			ssd.buffer[STATIC][ssd.digitIndex] = SEVENSEGMENT[i] ;
-			SSD_Refresh();
-			DelayMs(200);
+				SSD_Refresh();
+				if( j == (ssd.digitIndex - 1))
+					DelayMs(200);
+
+			}
+
+
 		}
 		
-		ssd.digitIndex++;
-	}
-	
-	ssd.digitIndex = 0;
 
+	}
+
+	return SUCCESS;
 }
 
 /*------------------------------------------------------------------------------
@@ -252,8 +265,11 @@ void SSD_Test(UINT8 from, UINT8 digits )
 * return value: none.
 * 
 *------------------------------------------------------------------------------*/
+#if defined COMMON_CATHODE
+
 void SSD_Refresh(void)
 {
+
 	UINT8 shift = 0x01;
 	
 	*ssd.digitPort_1 = 0xFF;
@@ -261,35 +277,162 @@ void SSD_Refresh(void)
 	*ssd.digitPort_3 = 0xFF;
 	*ssd.digitPort_4 = 0xFF;
 
-	*ssd.dataPort = ~ssd.buffer[STATIC][ssd.digitIndex];
+	*ssd.dataPort = ~ssd.dataBuffer[ssd.digitIndex];
 
 	if(ssd.digitIndex < 8)
 	{
 		shift <<= ssd.digitIndex;
 		*ssd.digitPort_1 = ~shift;
 	}
-//#if APP_MAX_DIGITS > 8
+
 	else if ( ( ssd.digitIndex  >= 8 ) && ( ssd.digitIndex < 16) )
 	{
 		shift <<= ssd.digitIndex - 8;
 		*ssd.digitPort_2 = ~shift;
 	}
-//#endif
 
-//#if APP_MAX_DIGITS > 16
+
+
 	else if ( ( ssd.digitIndex >= 16 ) && ( ssd.digitIndex < 24) )
 	{
 		shift <<= ssd.digitIndex - 16;
 		*ssd.digitPort_3 = ~shift;
 	}
-//#endif
-#ifndef SSD_TEST
+
+	else if ( ( ssd.digitIndex >= 24 ) && ( ssd.digitIndex < 32) )
+	{
+		shift <<= ssd.digitIndex - 24;
+		*ssd.digitPort_4 = ~shift;
+	}
+
 	ssd.digitIndex++;
-#endif
-	if(ssd.digitIndex > MAX_DIGITS)
+
+	if(ssd.digitIndex > ssd.noOfDigits)
 	{
 		ssd.digitIndex = 0;
 	}
+
+}
+
+#else
+void SSD_Refresh(void)
+{
+
+	UINT8 shift = 0x01;
+	
+	*ssd.digitPort_1 = ~(0xFF);
+	*ssd.digitPort_2 = ~(0xFF);
+	*ssd.digitPort_3 = ~(0xFF);
+	*ssd.digitPort_4 = ~(0xFF);
+
+	Delay10us(1);
+
+	*ssd.dataPort = ssd.dataBuffer[ssd.digitIndex];
+
+	if(ssd.digitIndex < 8)
+	{
+		shift <<= ssd.digitIndex;
+		*ssd.digitPort_1 = shift;
+	}
+
+	else if ( ( ssd.digitIndex  >= 8 ) && ( ssd.digitIndex < 16) )
+	{
+		shift <<= ssd.digitIndex - 8;
+		*ssd.digitPort_2 = shift;
+	}
+
+
+
+	else if ( ( ssd.digitIndex >= 16 ) && ( ssd.digitIndex < 24) )
+	{
+		shift <<= ssd.digitIndex - 16;
+		*ssd.digitPort_3 = shift;
+	}
+
+	else if ( ( ssd.digitIndex >= 24 ) && ( ssd.digitIndex < 32) )
+	{
+		shift <<= ssd.digitIndex - 24;
+		*ssd.digitPort_4 = shift;
+	}
+
+
+	ssd.digitIndex++;
+
+	if(ssd.digitIndex > ssd.noOfDigits)
+	{
+		ssd.digitIndex = 0;
+	}
+	Delay10us(1);
+
+}
+
+#endif
+
+/*------------------------------------------------------------------------------
+*  void SSD_Task(void )
+*
+* Function to handle Field configurations 
+* 
+* Input : none 
+* return value: none.
+* 
+*------------------------------------------------------------------------------*/
+void SSD_Task(void)
+{
+UINT8 i , j ;
+UINT8 data;
+
+	for(i = 0 ; i < ssd.noOfFields ; i++ )
+	{
+		switch(ssd.fields[i].blink)
+		{
+			case STATIC :
+				for( j = 0 ; j < ssd.fields[i].digits; j++ )
+				{
+					ssd.dataBuffer[ssd.fields[i].bufferIndex + j] = ssd.buffer[STATIC][ssd.fields[i].bufferIndex + j];
+				}
+			break;
+	
+			case BLINK:
+	
+				ssd.fields[i].blinkCount++;
+	
+				if( ssd.fields[i].blinkCount >= ssd.fields[i].blinkPeriod )
+				{
+	
+					for( j = 0 ; j < ssd.fields[i].digits; j++ )
+					{
+						if (ssd.dataBuffer[ssd.fields[i].bufferIndex + j] == ssd.buffer[STATIC][ssd.fields[i].bufferIndex + j] )
+								ssd.dataBuffer[ssd.fields[i].bufferIndex + j] = ssd.buffer[BLINK][ssd.fields[i].bufferIndex + j];
+		
+						else
+								ssd.dataBuffer[ssd.fields[i].bufferIndex + j] = ssd.buffer[STATIC][ssd.fields[i].bufferIndex + j];
+					}
+					ssd.fields[i].blinkCount = 0;
+				}
+
+			break;
+	
+			default:
+			break;
+		}
+	}
+
+
+	for(i = 0 ; i < ssd.noOfFields ; i++ )
+	{
+		switch(ssd.fields[i].ID)
+		{
+			if(ssd.fields[i].dotIndex != 0xFF)
+			{
+				data = ssd.buffer[STATIC][ssd.fields[i].bufferIndex + ssd.fields[i].dotIndex ] ;
+				ssd.buffer[STATIC][ssd.fields[i].bufferIndex + ssd.fields[i].dotIndex ] = (data | 0X80);
+			}
+
+		}
+		
+	}
+
 
 }
 
@@ -308,8 +451,8 @@ void SSD_Refresh(void)
 BOOL SSD_BlinkOn( UINT8 field_ID ,UINT16 blinkPeriod)
 {
 	UINT8 result = FALSE;
-	ssd.blinkPeriod = blinkPeriod / DISPLAY_REFRESH_PERIOD;	//convert period in milliseconds to period in count
-	ssd.blinkCount = 0;										//reset counter
+	ssd.fields[field_ID].blinkPeriod = blinkPeriod / DISPLAY_REFRESH_PERIOD;	//convert period in milliseconds to period in count
+	ssd.fields[field_ID].blinkCount = 0;										//reset counter
 	ssd.fields[field_ID].blink = BLINK;											//set blink mode
 	
 	result = TRUE;
@@ -335,7 +478,7 @@ BOOL SSD_BlinkOff( UINT8 field_ID )
 {
 	UINT8 result = FALSE;
 	
-	ssd.dispBuffer = ssd.buffer[STATIC]; //set current display buffer to data buffer
+//	ssd.dispBuffer = ssd.buffer[STATIC]; //set current display buffer to data buffer
 	ssd.fields[field_ID].blink = STATIC;							   //set static mode
 
 	result = TRUE;
@@ -343,6 +486,31 @@ BOOL SSD_BlinkOff( UINT8 field_ID )
 }
 
 
+/*------------------------------------------------------------------------------
+* BOOL SSD_DotOn( UINT8 field_ID , UINT8 index)
+*
+* Function to turn on dot in the field.
+* 
+* 
+* Input :          filed_ID   - ID of Field created by call to SSD_CreateField
+*	           dot index. - must be  0xFF to turn off  all dots of the  field
+*			      0  to field Length - 1 , as per application
+* return value: True On Success
+*                      False  On failure .
+*------------------------------------------------------------------------------*/
+BOOL SSD_DotOn( UINT8 field_ID , UINT8 index)
+{
+	UINT8 result = FALSE;
+	
+	if ( (index != 0xFF) || (index > ssd.fields[field_ID].digits)  )
+		return result;
+	
+	ssd.fields[field_ID].dotIndex = index;				
+
+	result = TRUE;
+	return result;
+
+}
 
 /*------------------------------------------------------------------------------
 *  static BOOL validate( UINT8 value)
@@ -368,4 +536,5 @@ static BOOL validate( UINT8 value)
 	}
 	return result;
 }
+
 

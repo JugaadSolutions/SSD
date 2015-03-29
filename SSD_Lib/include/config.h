@@ -29,10 +29,9 @@
 /*----------------------------------------
 *	SSD module configuration
 *----------------------------------------*/
-
-#define SSD_TEST(X)	SSD_TEST
-#define MAX_DIGITS 24
-#define MAX_FIELDS 4
+#define COMMON_CATHODE
+#define MAX_DIGITS 32
+#define MAX_FIELDS 16
 
 
 

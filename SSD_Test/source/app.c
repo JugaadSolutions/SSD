@@ -1,29 +1,37 @@
 #include "app.h"
 
 
-#pragma idata APP_DATA
+#pragma idata	APP_DATA
 APP app = {0};
 #pragma idata
 
 
 void APP_Init(void)
 {
-	UINT8 i;
+	UINT8 i ,j;
 
-	
-	for(i = 0; i < MAX_FIELDS ; i++)
-	{
-		app.field[i].ID = SSD_CreateField(4);
+ 	app.field[0].ID = SSD_CreateField(4);
+ 	app.field[1].ID = SSD_CreateField(4);
+ 	app.field[2].ID = SSD_CreateField(4);
+ 	app.field[3].ID = SSD_CreateField(4);
+
+	for(i = 0; i < 4 ; i++)
+ 	{
+		for(j = 0; j < 4; j++)
+		{
+			app.field[i].buffer[j] = j + '0' ;
+		}
 	}
 	for(i = 0; i < 4 ; i++)
-	{
-		app.field[0].buffer[i] = i;
-		app.field[1].buffer[i] = (i+6);	
-	}	
-
-	app.field[0].UpdateStatus = SSD_UpdateField(app.field[0].ID,app.field[0].buffer);
-	app.field[1].UpdateStatus = SSD_UpdateField(app.field[1].ID,app.field[1].buffer);
+ 	{	
+		app.field[i].UpdateStatus = SSD_UpdateField(app.field[i].ID , (app.field[i].buffer) );
+	}
 	
-//	SSD_Refresh();
+	 SSD_BlinkOn( app.field[1].ID ,10);
+	 SSD_BlinkOn( app.field[3].ID ,50);
+
+	 SSD_DotOn( app.field[0].ID , 2);
+
+
 	
 }

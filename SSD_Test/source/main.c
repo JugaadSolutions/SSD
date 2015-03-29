@@ -112,7 +112,8 @@ extern UINT16 eMBUpdate_count;
 void EnableInterrupts(void);
 extern UINT16 heartBeatCount ;
 extern UINT16 comUpdateCount ;
-extern UINT16 mmdUpdateCount;
+extern UINT16 ssdUpdateCount;
+
 /*
 *------------------------------------------------------------------------------
 * Private Variables (static)
@@ -158,7 +159,7 @@ extern UINT16 mmdUpdateCount;
 *------------------------------------------------------------------------------
 */
 
-#define TICK_PERIOD	(65535 - 8000) //500us
+#define TICK_PERIOD	(65535 - 8000) //	80000 - 1000us = 1 ms, 
 
 
 void main(void)
@@ -170,14 +171,15 @@ void main(void)
 	
 
 //	TMR0_init(TICK_PERIOD,0);	//initialize timer0
-//	 SSD_TEST(1);;
-	SSD_Init(PORT_A,PORT_C,PORT_E,PORT_F,PORT_J);					// initialize ssd module 
 
-//	SSD_Refresh();
+	SSD_Init(PORT_C,PORT_B,0,0,PORT_H, NO_OF_DIGITS, NO_OF_FIELDS);					// initialize ssd module 
+#ifdef SSD_TEST
+	SSD_Test( 0 , NO_OF_DIGITS );
+#endif
 
-//	APP_Init();
+	APP_Init();
 
-	TMR0_init(TICK_PERIOD,SSD_Refresh);
+	TMR0_init(TICK_PERIOD,SSD_Refresh); // call in 1 ms
 
 	EnableInterrupts();
 
@@ -190,7 +192,14 @@ void main(void)
 	
 			HB_task();
 			heartBeatCount = 0;
-		}		
+		}
+
+		if( ssdUpdateCount >= 100)
+		{
+		
+		SSD_Task();	
+		ssdUpdateCount = 0;
+		}	
  
 		//ClrWdt();	
 	}

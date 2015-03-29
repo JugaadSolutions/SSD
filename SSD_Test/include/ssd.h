@@ -12,6 +12,9 @@
 #include "utilities.h"
 #include "typedefs.h"
 
+#define SSD_TEST_ON		0
+//#define SSD_TEST(X)	 ((X > 0)? SSD_TEST_ON = 1: SSD_TEST_ON = 0)
+	
 /*
 *------------------------------------------------------------------------------
 * SSD - the Seven Segement Display structure. 
@@ -31,13 +34,15 @@ typedef struct _Field
 
 typedef struct _SSD
 {
-	Field    fields[MAX_FIELDS];   		// contains field information
+	Field    fields[16];   		// contains field information
 	UINT8	 fieldCount;				// Stores field count[1 - MAX_FIELDS]
-	UINT8 	 buffer[2][MAX_DIGITS];		//stores the data going to be display
+	UINT8 	 buffer[2][32];		//stores the data going to be display
 	UINT8* 	 dispBuffer; // pointer to current display buffer
 	UINT8 	 digitIndex ;				//to point next data in buffer
 	UINT16	 blinkCount;				//counter to be used in blink mode
 	UINT16	 blinkPeriod;				//blink period represented in counts
+	UINT8	 noOfDigits;
+	UINT8	 noOfFields;
 	far UINT8*  digitPort_1;			
 	far UINT8*  digitPort_2;
 	far UINT8*  digitPort_3;
@@ -60,7 +65,7 @@ Public Function declarations:
 *------------------------------------------------------------------------------*/
 
 /*------------------------------------------------------------------------------
-* void  SSD_Init( void )
+* void  SSD_Init( UINT8* digitPort_1,UINT8* digitPort_2,UINT8* digitPort_3,UINT8* digitPort_4,UINT8* dataPort,UINT8 noOfDigits, UINT8 noOfFields)
 *
 * Function to initialize the ssd fields. All variables in the field will be 
 * initialize to zero, except blink index.
@@ -71,7 +76,8 @@ Public Function declarations:
 * return value: none.
 * 
 *------------------------------------------------------------------------------*/
-void  SSD_Init( UINT8* digitPort_1,UINT8* digitPort_2,UINT8* digitPort_3,UINT8* digitPort_4,UINT8* datatPort);
+void  SSD_Init( UINT8* digitPort_1,UINT8* digitPort_2,UINT8* digitPort_3,UINT8* digitPort_4,UINT8* dataPort,
+				UINT8 noOfDigits, UINT8 noOfFields);
 
 /*------------------------------------------------------------------------------
 * UINT8 SSD_CreateField(UINT8 digits )
@@ -208,7 +214,7 @@ void SSD_Refresh(void);
 * return value: none.
 * 
 *------------------------------------------------------------------------------*/
-void SSD_Test(UINT8 from, UINT8 digits );
+UINT8 SSD_Test(UINT8 from, UINT8 digits );
 
 
 /*------------------------------------------------------------------------------
@@ -221,7 +227,6 @@ void SSD_Test(UINT8 from, UINT8 digits );
 * 
 *------------------------------------------------------------------------------*/
 void SSD_Clear(void);
-
 
 
 #endif

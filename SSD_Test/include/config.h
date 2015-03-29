@@ -103,10 +103,10 @@ enum
 *	SSD module configuration
 *----------------------------------------*/
 
-#define COMMON_CATHODE
-
-#define MAX_DIGITS 8
-#define MAX_FIELDS 2
+//#define COMMON_CATHODE
+//#define SSD_TEST
+#define NO_OF_DIGITS 16
+#define NO_OF_FIELDS 4
 
 /*----------------------------------------
 *	APP CONFIGURATION
