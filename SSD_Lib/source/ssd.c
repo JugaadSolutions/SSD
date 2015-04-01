@@ -93,16 +93,13 @@ void  SSD_Init( UINT8* digitPort_1,UINT8* digitPort_2,UINT8* digitPort_3,UINT8* 
 
 UINT8 SSD_CreateField(UINT8 digits)
 {
-	UINT8 i;  											//for calculation buffer index
-	if(ssd.fields[ssd.fieldCount - 1].ID >= ssd.noOfFields )
+	UINT8 i;  
+
+	// Check for max fields											
+	if(ssd.fieldCount > ssd.noOfFields )
 		return 0xFF;
 
-	ssd.fields[ssd.fieldCount].ID 		= ssd.fieldCount;						//field number
-	ssd.fields[ssd.fieldCount].digits 	= digits;								//no of digits of that field
-	ssd.fields[ssd.fieldCount].blink	=  STATIC ;								//field digit status
-	ssd.fields[ssd.fieldCount].dotIndex = 0xFF;									//field dot status
-	
-
+	// Setting buffer index based on previous field digits
 	if( ssd.fieldCount > 0)
 	{
 
@@ -113,7 +110,19 @@ UINT8 SSD_CreateField(UINT8 digits)
 	}
 	else
 		ssd.fields[ssd.fieldCount].bufferIndex = 0;
-		
+
+
+	//Check for bufferIndex is greater than MAX_DIGITS (noOfDigits)
+	if(ssd.fields[ssd.fieldCount].bufferIndex >= ssd.noOfDigits )
+	{
+		ssd.fields[ssd.fieldCount].bufferIndex = 0;
+		return 0xFF;	
+	}
+
+	ssd.fields[ssd.fieldCount].ID 		= ssd.fieldCount;						//field number
+	ssd.fields[ssd.fieldCount].digits 	= digits;								//no of digits of that field
+	ssd.fields[ssd.fieldCount].blink	=  STATIC ;								//field digit status
+	ssd.fields[ssd.fieldCount].dotIndex = 0xFF;									//field dot status		
 
 	ssd.fieldCount++;
 
@@ -268,7 +277,7 @@ void SSD_Refresh(void)
 	UINT8 multiplier = 0;
 	if(ssd.commonCathode == TRUE)
 	{
-		while(ssd.digitPort[i])
+		while(ssd.digitPort[i] != 0)
 		{
 			*ssd.digitPort[i] = 0xFF;
 			i++;

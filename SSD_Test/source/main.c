@@ -172,7 +172,7 @@ void main(void)
 
 //	TMR0_init(TICK_PERIOD,0);	//initialize timer0
 
-	SSD_Init(PORT_C,PORT_B,0,0,PORT_H, NO_OF_DIGITS, NO_OF_FIELDS,COMMON_CATHODE);					// initialize ssd module 
+	SSD_Init(PORT_C,0,0,0,PORT_H, NO_OF_DIGITS, NO_OF_FIELDS,COMMON_CATHODE);					// initialize ssd module 
 #ifdef SSD_TEST
 	SSD_Test( 0 , NO_OF_DIGITS );
 #endif
@@ -197,8 +197,8 @@ void main(void)
 		if( ssdUpdateCount >= 100)
 		{
 		
-		SSD_Task();	
-		ssdUpdateCount = 0;
+			SSD_Task();	
+			ssdUpdateCount = 0;
 		}	
  
 		//ClrWdt();	
