@@ -30,7 +30,7 @@ void APP_Init(void)
 	 SSD_BlinkOn( app.field[1].ID ,10);
 	 SSD_BlinkOn( app.field[3].ID ,50);
 
-	 SSD_DotOn( app.field[0].ID , 2);
+	 SSD_DotOn( app.field[1].ID , 2);
 
 
 	

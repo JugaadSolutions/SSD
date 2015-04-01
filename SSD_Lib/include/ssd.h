@@ -34,19 +34,16 @@ typedef struct _Field
 
 typedef struct _SSD
 {
-	Field    fields[MAX_FIELDS];   		// contains field information
-	UINT8	 fieldCount;				// Stores field count[1 - MAX_FIELDS]
-	UINT8 	 buffer[2][MAX_DIGITS];		//stores the data of the fields
-	UINT8	 dataBuffer[MAX_DIGITS];	//stores the data going to be display
-	UINT8* 	 dispBuffer; // pointer to current display buffer
-	UINT8 	 digitIndex ;				//to point next data in buffer
-	UINT8	 noOfDigits;
-	UINT8	 noOfFields;
-	far UINT8*  digitPort_1;			
-	far UINT8*  digitPort_2;
-	far UINT8*  digitPort_3;
-	far UINT8*  digitPort_4;
+	Field    	fields[MAX_FIELDS];   		// contains field information
+	UINT8	 	fieldCount;				// Stores field count[1 - MAX_FIELDS]
+	UINT8 	 	buffer		[MAX_DIGITS];		//stores the data of the fields
+	UINT8	 	dataBuffer[MAX_DIGITS];	//stores the data going to be display
+	UINT8 	 	digitIndex ;				//to point next data in buffer
+	UINT8	 	noOfDigits;
+	UINT8	 	noOfFields;
+	far UINT8*  digitPort[MAX_DIGITPORT];			
 	far UINT8*  dataPort;
+	UINT8       commonCathode;
 }SSD;
 
 
@@ -76,7 +73,7 @@ Public Function declarations:
 * 
 *------------------------------------------------------------------------------*/
 void  SSD_Init( UINT8* digitPort_1,UINT8* digitPort_2,UINT8* digitPort_3,UINT8* digitPort_4,UINT8* dataPort,
-				UINT8 noOfDigits, UINT8 noOfFields);
+				UINT8 noOfDigits, UINT8 noOfFields , UINT8 commonCathode);
 
 /*------------------------------------------------------------------------------
 * UINT8 SSD_CreateField(UINT8 digits )

@@ -65,7 +65,8 @@ Public Function declarations:
 *------------------------------------------------------------------------------*/
 
 /*------------------------------------------------------------------------------
-* void  SSD_Init( UINT8* digitPort_1,UINT8* digitPort_2,UINT8* digitPort_3,UINT8* digitPort_4,UINT8* dataPort,UINT8 noOfDigits, UINT8 noOfFields)
+* void  SSD_Init( UINT8* digitPort_1,UINT8* digitPort_2,UINT8* digitPort_3,UINT8* digitPort_4,UINT8* dataPort,
+				UINT8 noOfDigits, UINT8 noOfFields , UINT8 commonCathode);
 *
 * Function to initialize the ssd fields. All variables in the field will be 
 * initialize to zero, except blink index.
@@ -77,7 +78,7 @@ Public Function declarations:
 * 
 *------------------------------------------------------------------------------*/
 void  SSD_Init( UINT8* digitPort_1,UINT8* digitPort_2,UINT8* digitPort_3,UINT8* digitPort_4,UINT8* dataPort,
-				UINT8 noOfDigits, UINT8 noOfFields);
+				UINT8 noOfDigits, UINT8 noOfFields , UINT8 commonCathode);
 
 /*------------------------------------------------------------------------------
 * UINT8 SSD_CreateField(UINT8 digits )

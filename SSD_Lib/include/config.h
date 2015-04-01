@@ -32,6 +32,7 @@
 #define COMMON_CATHODE
 #define MAX_DIGITS 32
 #define MAX_FIELDS 16
+#define MAX_DIGITPORT 4
 
 
 
