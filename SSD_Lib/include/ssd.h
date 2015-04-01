@@ -61,14 +61,21 @@ Public Function declarations:
 *------------------------------------------------------------------------------*/
 
 /*------------------------------------------------------------------------------
-* void  SSD_Init( UINT8* digitPort_1,UINT8* digitPort_2,UINT8* digitPort_3,UINT8* digitPort_4,UINT8* dataPort,UINT8 noOfDigits, UINT8 noOfFields)
+* void  SSD_Init( UINT8* digitPort_1, UINT8* digitPort_2, UINT8* digitPort_3, UINT8* digitPort_4,
+				  UINT8* dataPort, UINT8 noOfDigits, UINT8 noOfFields, UINT8 commonCathode)
 *
 * Function to initialize the ssd fields. All variables in the field will be 
 * initialize to zero, except blink index.
 * 
-* Input :digitPort_x(x = 1,2,3,4) = adress of digit control port
-		 dataPort				  = adress of seven segement data port
-		
+* Input : 	digitPort_1 - port for control digit 
+			digitPort_2 - port for control digit 
+			digitPort_3 - port for control digit 
+			digitPort_4 -  port for control digit 
+			dataPort    - port for seven segment data
+			noOfDigits	- max_number of digit used by application
+			noOfFields 	- max_number of fields used by application 
+			commonCathode	 - 1 -  common cathode display
+   							   0 -  common anode display
 * return value: none.
 * 
 *------------------------------------------------------------------------------*/
@@ -83,7 +90,8 @@ void  SSD_Init( UINT8* digitPort_1,UINT8* digitPort_2,UINT8* digitPort_3,UINT8* 
 * 
 * Initializes field length to the value as per parameter  passed.	 
 * Input : digits - Digits must be  < MAX_DIGITS and non zero value.
-* return value: FIeld ID.
+* return value: FIeld ID   - On Success
+*                      0xFF	   - On failure .
 * 
 *------------------------------------------------------------------------------*/
 
@@ -96,12 +104,11 @@ UINT8 SSD_CreateField(UINT8 digits);
 * Function to update field content to in display buffer.
 * 
 * 
-* Input : 
-*              filed_ID   - ID of Field created by call to SSD_CreateField
-*              buffer - pointer to buffer containing Data to be displayed in ASCII Format , must be non NULL.
+* Input : field_ID - ID of Field of which data to be updated.
+*         buffer - pointer to buffer containing Data to be displayed in ASCII Format , must be non *               NULL.
 *
 * return value: True  - On Success
-*                      False - On failure .
+*               False - On failure .
 * 
 *------------------------------------------------------------------------------*/
 BOOL SSD_UpdateField(UINT8 filed_ID, UINT8 *buffer);
@@ -110,20 +117,20 @@ BOOL SSD_UpdateField(UINT8 filed_ID, UINT8 *buffer);
 
 
 /*------------------------------------------------------------------------------
-* BOOL SSD_UpdateFieldpartial(UINT8 field_ID , UINT8 *buffer, UINT8 index , UINT8  no_of_digit);
-* Function to update field content to  in display buffer.
+* BOOL SSD_UpdateFieldpartial(UINT8 field_ID , UINT8 *buffer, UINT8 index , UINT8  digits);
+* Function to update field content in display buffer.
 * 
 * 
-* Input : 
-* 	filed_ID  - ID of Field created by call to SSD_CreateField
-*          buffer     -  pointer to buffer containing Data to be displayed in ASCII Format , must be non NULL.
-*	index      - field index from which data to be updated.
-*	no_of_digit - number of   digits to be updated.
+* Input : field_ID  - ID of Field of which data to be updated.
+*         buffer    -  pointer to buffer containing Data to be displayed in ASCII Format , must be non *               	     NULL.
+*		  index      - field index from which data to be updated.
+*		  no_of_digit - number of   digits to be updated.
 * return value: True On Success
-*                      False - On failure .
+*               False - On failure .
 * 
 *------------------------------------------------------------------------------*/
 BOOL SSD_UpdateFieldpartial(UINT8 field_ID,UINT8 *buffer, UINT8 index , UINT8 no_of_digit);
+
 
 /*------------------------------------------------------------------------------
 * BOOL SSD_DotOn( UINT8 field_ID , UINT8 index)
@@ -140,11 +147,6 @@ BOOL SSD_UpdateFieldpartial(UINT8 field_ID,UINT8 *buffer, UINT8 index , UINT8 no
 BOOL SSD_DotOn( UINT8 field_ID , UINT8 index);
 
 
-
-
-
-
-
 /*------------------------------------------------------------------------------
 *  BOOL SSD_BlinkOn( UINT8 field_ID )
 *
@@ -159,6 +161,7 @@ BOOL SSD_DotOn( UINT8 field_ID , UINT8 index);
 * 
 *------------------------------------------------------------------------------*/
 BOOL SSD_BlinkOn( UINT8 field_ID,UINT16 blinkPeriod );
+
 
 
 /*------------------------------------------------------------------------------
@@ -199,6 +202,7 @@ void SSD_Task(void);
 *------------------------------------------------------------------------------*/
 void SSD_Refresh(void);
 
+
 /*------------------------------------------------------------------------------
 *  void SSD_Test(UINT8 from, UINT8 digits )
 *
@@ -214,15 +218,15 @@ UINT8 SSD_Test(UINT8 from, UINT8 digits );
 
 
 /*------------------------------------------------------------------------------
-*  void SSD_Clear(void )
+*  UINT8 SSD_Clear(UINT8 field_ID )
 *
 * clear the SSD  buffer
 * 
-* Input : none 
-* return value: none.
-* 
+* Input : field_ID - Field ID of which data to be cleared. 
+* return value: True - on success
+* 		False - on failure
 *------------------------------------------------------------------------------*/
-void SSD_Clear(void);
+UINT8 SSD_Clear(UINT8 field_ID);
 
 
 #endif

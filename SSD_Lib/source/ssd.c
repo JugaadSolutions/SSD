@@ -37,17 +37,26 @@ static UINT8 validate( UINT8 value );
 
 
 /*------------------------------------------------------------------------------
-* void  SSD_Init( UINT8* digitPort_1,UINT8* digitPort_2,UINT8* digitPort_3,UINT8* digitPort_4,UINT8* dataPort,UINT8 noOfDigits, UINT8 noOfFields)
+* void  SSD_Init( UINT8* digitPort_1, UINT8* digitPort_2, UINT8* digitPort_3, UINT8* digitPort_4,
+				  UINT8* dataPort, UINT8 noOfDigits, UINT8 noOfFields, UINT8 commonCathode)
 *
 * Function to initialize the ssd fields. All variables in the field will be 
 * initialize to zero, except blink index.
 * 
-* Input :none
+* Input : 	digitPort_1 - port to control digit 
+			digitPort_2 - port to control digit 
+			digitPort_3 - port to control digit 
+			digitPort_4 - port to control digit 
+			dataPort    - port to handle seven segment data
+			noOfDigits	- max_number of digit used by application
+			noOfFields 	- max_number of fields used by application 
+			commonCathode	 - 1 -  common cathode display
+   							   0 -  common anode display
 * return value: none.
 * 
 *------------------------------------------------------------------------------*/
-void  SSD_Init( UINT8* digitPort_1,UINT8* digitPort_2,UINT8* digitPort_3,UINT8* digitPort_4,UINT8* dataPort,
-				UINT8 noOfDigits, UINT8 noOfFields,UINT8 commonCathode)
+void  SSD_Init( UINT8* digitPort_1,UINT8* digitPort_2,UINT8* digitPort_3,UINT8* digitPort_4,
+				UINT8* dataPort, UINT8 noOfDigits, UINT8 noOfFields,UINT8 commonCathode)
 {
 	UINT8 i;
 	ssd.noOfDigits		= noOfDigits;
@@ -78,7 +87,6 @@ void  SSD_Init( UINT8* digitPort_1,UINT8* digitPort_2,UINT8* digitPort_3,UINT8* 
 
 }
 
-
 /*------------------------------------------------------------------------------
 * UINT8 SSD_CreateField(UINT8 digits )
 
@@ -87,7 +95,8 @@ void  SSD_Init( UINT8* digitPort_1,UINT8* digitPort_2,UINT8* digitPort_3,UINT8* 
 * 
 * Initializes field length to the value as per parameter  passed.	 
 * Input : digits - Digits must be  < MAX_DIGITS and non zero value.
-* return value: FIeld ID.
+* return value: FIeld ID   - On Success
+*                      0xFF	   - On failure .
 * 
 *------------------------------------------------------------------------------*/
 
@@ -96,20 +105,16 @@ UINT8 SSD_CreateField(UINT8 digits)
 	UINT8 i;  
 
 	// Check for max fields											
-	if(ssd.fieldCount > ssd.noOfFields )
+	if(ssd.fieldCount >= ssd.noOfFields )
 		return 0xFF;
-
+ 
 	// Setting buffer index based on previous field digits
-	if( ssd.fieldCount > 0)
-	{
 
-		for(i = ssd.fieldCount ; i > 0; i--)
-		{
-			ssd.fields[ssd.fieldCount].bufferIndex += ssd.fields[i-1].digits;	//caculation to get the buffer index of SSD buffer
-		}
+	for(i = ssd.fieldCount ; i > 0; i--)
+	{
+		ssd.fields[ssd.fieldCount].bufferIndex += ssd.fields[i-1].digits;	//caculation to get the buffer index of SSD buffer
 	}
-	else
-		ssd.fields[ssd.fieldCount].bufferIndex = 0;
+
 
 
 	//Check for bufferIndex is greater than MAX_DIGITS (noOfDigits)
@@ -136,12 +141,11 @@ UINT8 SSD_CreateField(UINT8 digits)
 * Function to update field content to in display buffer.
 * 
 * 
-* Input : 
-*              filed_ID   - ID of Field created by call to SSD_CreateField
-*              buffer - pointer to buffer containing Data to be displayed in ASCII Format , must be non NULL.
+* Input : field_ID - ID of Field of which data to be updated.
+*         buffer - pointer to buffer containing Data to be displayed in ASCII Format , must be non *               NULL.
 *
 * return value: True  - On Success
-*                      False - On failure .
+*               False - On failure .
 * 
 *------------------------------------------------------------------------------*/
 BOOL SSD_UpdateField(UINT8 field_ID, UINT8 *buffer)
@@ -170,18 +174,15 @@ BOOL SSD_UpdateField(UINT8 field_ID, UINT8 *buffer)
 }
 
 
-
-
 /*------------------------------------------------------------------------------
-* BOOL SSD_UpdateFieldpartial(UINT8 field_ID , UINT8 *buffer, UINT8 index , UINT8  no_of_digit);
-* Function to update field content to  in display buffer.
+* BOOL SSD_UpdateFieldpartial(UINT8 field_ID , UINT8 *buffer, UINT8 index , UINT8  digits);
+* Function to update field content in display buffer.
 * 
 * 
-* Input : 
-* 	filed_ID  - ID of Field created by call to SSD_CreateField
-*          buffer     -  pointer to buffer containing Data to be displayed in ASCII Format , must be non  NULL.
-*		   index      - field index from which data to be updated.
-*			no_of_digit - number of   digits to be updated.
+* Input : field_ID  - ID of Field of which data to be updated.
+*         buffer    -  pointer to buffer containing Data to be displayed in ASCII Format , must be non *               	     NULL.
+*		  index      - field index from which data to be updated.
+*		  no_of_digit - number of   digits to be updated.
 * return value: True On Success
 *               False - On failure .
 * 
@@ -484,4 +485,44 @@ static BOOL validate( UINT8 value)
 	return result;
 }
 
+/*------------------------------------------------------------------------------
+*  void SSD_Clear(UINT8 field_ID )
+*
+* clear the SSD  buffer
+* 
+* Input : field_ID - Field ID of which data to be cleared. 
+* return value: True - on success
+* 		False - on failure
+*------------------------------------------------------------------------------*/
+UINT8 SSD_Clear(UINT8 field_ID)
+{
+		
+	UINT8 j;
+	UINT8 result = FAILURE;
 
+	// Check for max fields											
+	if(ssd.fieldCount >= ssd.noOfFields )
+		return result;
+
+	ssd.fields[field_ID]. blink 		 = STATIC;
+	ssd.fields[field_ID].blinkPeriod	 = 0;
+	ssd.fields[field_ID].blinkCount	 	 = 0;
+	ssd.fields[field_ID]. dotIndex 	 	 = 0xFF;
+
+	for( j = 0 ; j < ssd.fields[field_ID].digits; j++ )
+	{
+		ssd.dataBuffer[ssd.fields[field_ID].bufferIndex + j] = 0X00;
+	}
+	
+	result = SUCCESS;
+	
+	return result;
+}
+
+
+
+/*
+* -------------------------------
+* End of SSD.C
+*--------------------------------
+*/
